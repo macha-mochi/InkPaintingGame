@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMap.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Master'sHouse.unity
+    path: Assets/Scenes/Story.unity
     guid: 858b95ce7fb9247bd915b25e269ac026
   - enabled: 1
     path: Assets/Scenes/ForestPath.unity

@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     }
     public void progressAndUpdateMap()
     {
-        MainManager.instance.progressAndUpdateMap();
+        MainManager.progress++;
+        PlayerPrefs.SetInt("Progress", MainManager.progress);
     }
 }
