@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MainManager : MonoBehaviour
 {
     public static int progress = 0;
     public static int numPracticeCurrent = 0;
     public static int numLearnCurrent = 0;
+    public static int cultivationLocation = -1;
+    public static char cultivationMode; //can be 'p' or 'l'
 
     public List<Location> locations = new List<Location>();
+    [SerializeField] TextMeshProUGUI objective;
 
     private void Start()
     {
@@ -24,34 +28,64 @@ public class MainManager : MonoBehaviour
         {
             case 0:
                 locations[0].isUnlocked = true;
+                locations[0].canProgressStory = true;
                 Debug.Log("player at masters house");
                 break;
             case 1:
                 locations[0].isUnlocked = false;
                 locations[1].isUnlocked = true;
+                locations[1].canProgressStory = true;
                 Debug.Log("player going down the mountain");
                 break;
             case 2:
                 locations[1].isUnlocked = false;
                 locations[2].isUnlocked = true;
+                locations[2].canProgressStory = true;
                 Debug.Log("player arrives at their room in the city");
                 break;
             case 3:
                 locations[2].isUnlocked = false;
                 locations[3].isUnlocked = true;
+                locations[3].canProgressStory = true;
                 Debug.Log("player at library, introduce to commissions + get info on first one");
                 break;
             case 4:
                 locations[3].isUnlocked = false;
                 locations[4].isUnlocked = true;
+                locations[4].canProgressStory = true;
                 Debug.Log("first commission, player at bridge w old guy");
                 break;
             case 5:
-
-                //TODO: practice/learn x times, unlocked locations = room, library
-
                 locations[4].isUnlocked = false;
-                locations[5].isUnlocked = true;
+
+                //unlocked locations = room, library
+                locations[2].isUnlocked = true; //room
+                locations[2].canCultivate = true;
+                locations[3].isUnlocked = true; //library
+                locations[3].canCultivate = true;
+
+                int practiceNeeded = 2;
+                int learnNeeded = 1;
+                if(numPracticeCurrent == practiceNeeded && numLearnCurrent == learnNeeded)
+                {
+                    objective.text = "Story Progression Available";
+
+                    //still have other locations available, it just wont count extra
+                    /*
+                     * practice: random spell theyve done before
+                     * learn: new spell, but if they try to do 'learn' again AFTER meeting criteria,
+                     *      just do practice instead to save new spells for later
+                     */
+                    locations[5].isUnlocked = true;
+                    locations[5].canProgressStory = true;
+                }
+                else
+                {
+                    objective.text =
+                        "Practice Spells: " + numPracticeCurrent + "/" + practiceNeeded + "\n" +
+                        "Learn Spells: " + numLearnCurrent + "/" + learnNeeded;
+                }
+
                 Debug.Log("[cultivate X times] then player at lake, on boat, unlock lake location");
                 break;
             case 6:
