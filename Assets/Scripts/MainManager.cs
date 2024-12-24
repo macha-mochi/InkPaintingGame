@@ -66,6 +66,8 @@ public class MainManager : MonoBehaviour
 
                 int practiceNeeded = 2;
                 int learnNeeded = 1;
+                numPracticeCurrent = Mathf.Min(numPracticeCurrent, practiceNeeded);
+                numLearnCurrent = Mathf.Min(numLearnCurrent, learnNeeded);
                 if(numPracticeCurrent == practiceNeeded && numLearnCurrent == learnNeeded)
                 {
                     objective.text = "Story Progression Available";
@@ -89,45 +91,112 @@ public class MainManager : MonoBehaviour
                 Debug.Log("[cultivate X times] then player at lake, on boat, unlock lake location");
                 break;
             case 6:
-
-                //TODO: practice/learn x times, unlocked locations = room, library, lake
-
                 locations[5].isUnlocked = false;
-                locations[6].isUnlocked = true;
+
+                //unlocked locations = room, library, lake
+                locations[2].isUnlocked = true; //room
+                locations[2].canCultivate = true;
+                locations[3].isUnlocked = true; //library
+                locations[3].canCultivate = true;
+                locations[5].isUnlocked = true; //lake
+                locations[5].canCultivate = true;
+
+                practiceNeeded = 2;
+                learnNeeded = 2;
+                numPracticeCurrent = Mathf.Min(numPracticeCurrent, practiceNeeded);
+                numLearnCurrent = Mathf.Min(numLearnCurrent, learnNeeded);
+                if (numPracticeCurrent == practiceNeeded && numLearnCurrent == learnNeeded)
+                {
+                    objective.text = "Story Progression Available";
+
+                    //still have other locations available, it just wont count extra
+                    /*
+                     * practice: random spell theyve done before
+                     * learn: new spell, but if they try to do 'learn' again AFTER meeting criteria,
+                     *      just do practice instead to save new spells for later
+                     */
+                    locations[6].isUnlocked = true;
+                    locations[6].canProgressStory = true;
+                }
+                else
+                {
+                    objective.text =
+                        "Practice Spells: " + numPracticeCurrent + "/" + practiceNeeded + "\n" +
+                        "Learn Spells: " + numLearnCurrent + "/" + learnNeeded;
+                }
+
                 Debug.Log("[cultivate X times] go to library for another commission, get info on first one");
                 break;
             case 7:
                 locations[6].isUnlocked = false;
                 locations[7].isUnlocked = true;
+                locations[7].canProgressStory = true;
                 Debug.Log("player at tea masters garden, does commission and buys tea, unlock location");
                 break;
             case 8:
                 locations[7].isUnlocked = false;
                 locations[8].isUnlocked = true;
+                locations[8].canProgressStory = true;
                 Debug.Log("player goes to maple forest, unlock location");
                 break;
             case 9:
-
-                //TODO: practice/learn x times, unlocked locations = room, library, lake, tea garden, maple forest
-
                 locations[8].isUnlocked = false;
-                locations[9].isUnlocked = true;
+
+                //unlocked locations = room, library, lake, tea garden, maple forest
+                locations[2].isUnlocked = true; //room
+                locations[2].canCultivate = true;
+                locations[3].isUnlocked = true; //library
+                locations[3].canCultivate = true;
+                locations[5].isUnlocked = true; //lake
+                locations[5].canCultivate = true;
+                locations[7].isUnlocked = true; //tea garden
+                locations[7].canCultivate = true;
+                locations[8].isUnlocked = true; //maple forest
+                locations[8].canCultivate = true;
+
+                practiceNeeded = 2;
+                learnNeeded = 2;
+                numPracticeCurrent = Mathf.Min(numPracticeCurrent, practiceNeeded);
+                numLearnCurrent = Mathf.Min(numLearnCurrent, learnNeeded);
+                if (numPracticeCurrent == practiceNeeded && numLearnCurrent == learnNeeded)
+                {
+                    objective.text = "Story Progression Available";
+
+                    //still have other locations available, it just wont count extra
+                    /*
+                     * practice: random spell theyve done before
+                     * learn: new spell, but if they try to do 'learn' again AFTER meeting criteria,
+                     *      just do practice instead to save new spells for later
+                     */
+                    locations[9].isUnlocked = true;
+                    locations[9].canProgressStory = true;
+                }
+                else
+                {
+                    objective.text =
+                        "Practice Spells: " + numPracticeCurrent + "/" + practiceNeeded + "\n" +
+                        "Learn Spells: " + numLearnCurrent + "/" + learnNeeded;
+                }
+
                 Debug.Log("[cultivate X times] player is at their room, mc realizes theyve been here for while");
                 break;
             case 10:
                 locations[9].isUnlocked = false;
                 locations[10].isUnlocked = true;
+                locations[10].canProgressStory = true;
                 Debug.Log("player in desert, pretty AF");
                 break;
             case 11:
                 locations[10].isUnlocked = false;
                 locations[11].isUnlocked = true;
+                locations[11].canProgressStory = true;
                 Debug.Log("player back at masters house, game ends");
                 break;
             default:
                 break;
         }
 
+        //i also wanna make it so that after the player finishes the game they can view a gallery of locations
         //dont forget to do the colors
 
         foreach(Location loc in locations)

@@ -12,6 +12,11 @@ public class UIManager : MonoBehaviour
     public void progressAndUpdateMap()
     {
         MainManager.progress++;
+        if(MainManager.progress == 6 || MainManager.progress == 9)
+        {
+            MainManager.numPracticeCurrent = 0;
+            MainManager.numLearnCurrent = 0;
+        }
         PlayerPrefs.SetInt("Progress", MainManager.progress);
     }
     public void finishCultivation()
