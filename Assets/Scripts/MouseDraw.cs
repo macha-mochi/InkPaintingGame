@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MouseDrawTest : MonoBehaviour
+public class MouseDraw : MonoBehaviour
 {
     /*
      * THE PLAN
@@ -18,16 +18,21 @@ public class MouseDrawTest : MonoBehaviour
 
     Texture2D texture;
     RawImage mask;
-    Canvas canvas;
     Vector3 prevMousePosition;
+    Vector2 mousePositionDelta;
+    Vector2 mousePos_Texture;
+    Vector2 textureBottomLeftPos_Screen;
 
     Color clear = new Color(0, 0, 0, 0);
+    Color[] transparent;
     Color black = new Color(0, 0, 0, 1);
+
+    bool canDraw = true;
 
     void Start()
     {
         texture = new Texture2D(728, 1490);
-        Color[] transparent = new Color[728 * 1490];
+        transparent = new Color[728 * 1490];
         for(int i = 0; i < transparent.Length; i++)
         {
             transparent[i] = clear;
@@ -37,23 +42,30 @@ public class MouseDrawTest : MonoBehaviour
         mask = GetComponent<RawImage>();
         mask.texture = texture;
 
-        canvas = FindObjectOfType<Canvas>();
         prevMousePosition = Input.mousePosition;
+
+        Vector3[] v = new Vector3[4];
+        GetComponent<RectTransform>().GetWorldCorners(v);
+        textureBottomLeftPos_Screen = v[0];
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 mousePositionDelta = Input.mousePosition - prevMousePosition;
-        if (Input.GetMouseButton(0) && mousePositionDelta.magnitude != 0)
+        mousePositionDelta = Input.mousePosition - prevMousePosition;
+
+        Vector2 mousePos_Screen = Input.mousePosition; //bottom left is 0, 0, mouse position relative to screen
+        mousePos_Texture = mousePos_Screen - textureBottomLeftPos_Screen;
+
+        if (canDraw && Input.GetMouseButton(0) && mousePositionDelta.magnitude != 0)
         {
-            Vector2 mousePos_Screen = Input.mousePosition; //bottom left is 0, 0, mouse position relative to screen
+            /*Vector2 mousePos_Screen = Input.mousePosition; //bottom left is 0, 0, mouse position relative to screen
 
             Vector3[] v = new Vector3[4];
             GetComponent<RectTransform>().GetWorldCorners(v);
             Vector2 textureBottomLeftPos_Screen = v[0];
 
-            Vector2 mousePos_Texture = mousePos_Screen - textureBottomLeftPos_Screen;
+            mousePos_Texture = mousePos_Screen - textureBottomLeftPos_Screen;*/
             Vector2 prevMousePos_Texture = (Vector2)prevMousePosition - textureBottomLeftPos_Screen;
 
             //texture.SetPixel((int)mousePos_Texture.x, (int)mousePos_Texture.y, black);
@@ -97,7 +109,6 @@ public class MouseDrawTest : MonoBehaviour
         float ady = Mathf.Abs(dy);
 
         float theta = Mathf.Atan(ady / adx);
-        Debug.Log(theta);
         float cos = lineWidth / 2 * Mathf.Cos(Mathf.PI / 2 - theta);
         float sin = lineWidth / 2 * Mathf.Sin(Mathf.PI / 2 - theta);
 
@@ -229,5 +240,22 @@ public class MouseDrawTest : MonoBehaviour
                 else x -= m;
             }
         }
+    }
+    public Vector2 GetMousePositionTexture()
+    {
+        return mousePos_Texture;
+    }
+    public void ClearDrawableTexture()
+    {
+        texture.SetPixels(transparent, 0);
+        texture.Apply();
+    }
+    public bool GetCanDraw()
+    {
+        return canDraw;
+    }
+    public void SetCanDraw(bool b)
+    {
+        canDraw = b;
     }
 }
