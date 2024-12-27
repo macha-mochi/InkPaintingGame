@@ -27,16 +27,26 @@ public class Spell : MonoBehaviour
     [SerializeField] List<StrokeEnd> ends;
     [SerializeField] List<GameObject> barriers;
 
+    [SerializeField] Image gold;
+    [SerializeField] Image paper;
+
     bool drawingStarted = false;
     bool shouldCountTimeInactive = false;
     [SerializeField] float timeBeforeFail = 3.0f;
     float timeSinceLastAction = 0;
     Texture2D rune;
     int currentStroke = 0;
+    bool runeCompleted = false;
+    float dAlpha = 0.003f;
+    float delayBeforeTurnGold = 0.8f;
+    float timeElapsedSinceComplete = 0;
 
+    float timeBetweenMouseSample = 0.1f;
+    float timeElapsedSinceMouseSample = 0;
     Vector2 previousMousePosition;
     Vector2 velocityDirection;
     Vector2 previousVelocityDirection;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,10 +62,14 @@ public class Spell : MonoBehaviour
     {
         if (drawingStarted)
         {
-            velocityDirection = (Vector2)Input.mousePosition - previousMousePosition;
-            Debug.Log(Input.mousePosition + " " + previousMousePosition);
-            Debug.Log(previousVelocityDirection + " " + velocityDirection);
-            Debug.Log(Vector2.Angle(previousVelocityDirection, velocityDirection));
+            if(timeElapsedSinceMouseSample >= timeBetweenMouseSample)
+            {
+                velocityDirection = (Vector2)Input.mousePosition - previousMousePosition;
+                Debug.Log(Input.mousePosition + " " + previousMousePosition);
+                Debug.Log(previousVelocityDirection + " " + velocityDirection);
+                Debug.Log(Vector2.Angle(previousVelocityDirection, velocityDirection));
+            }
+
             if (!IsMouseInMask() && Input.GetMouseButton(0))
             {
                 Debug.Log("failed bc was dragging out of bounds");
@@ -72,15 +86,35 @@ public class Spell : MonoBehaviour
             {
                 Debug.Log("failed bc released stroke early");
                 Reset();
-            }else if(Vector2.Angle(previousVelocityDirection, velocityDirection) > 160)
+            }else if(Vector2.Angle(previousVelocityDirection, velocityDirection) > 160 && Input.GetMouseButton(0))
             {
-                //should fail if you start going in the wrong direction...
-                Reset(); //TODO BROKEN, PROBABLE SOLUTION: DONT UPDATE PREVIOUS POSITION/VELOCITY EVERY FRAME
+                Debug.Log("failed bc started going in wrong direction");
+                Reset();
             }
             if (shouldCountTimeInactive) timeSinceLastAction += Time.deltaTime;
 
-            previousMousePosition = Input.mousePosition;
-            previousVelocityDirection = velocityDirection;
+            if(timeElapsedSinceMouseSample >= timeBetweenMouseSample)
+            {
+                timeElapsedSinceMouseSample = 0;
+
+                previousMousePosition = Input.mousePosition;
+                previousVelocityDirection = velocityDirection;
+            }
+            timeElapsedSinceMouseSample += Time.deltaTime;
+        }
+        if (runeCompleted)
+        {
+            if(timeElapsedSinceComplete >= delayBeforeTurnGold)
+            {
+                float a = paper.color.a - dAlpha;
+                if (a > 0) paper.color = new Color(1, 1, 1, a);
+                a = gold.color.a + dAlpha;
+                if (a < 1) gold.color = new Color(1, 1, 1, a);
+            }
+            else
+            {
+                timeElapsedSinceComplete += Time.deltaTime;
+            }
         }
     }
     public void nextStroke()
@@ -128,7 +162,8 @@ public class Spell : MonoBehaviour
         Debug.Log("rune completed");
         drawingStarted = false;
         md.SetCanDraw(false);
-        //play all the fancy VFX :DDD
+        runeCompleted = true;
+        mask.gameObject.GetComponent<Mask>().showMaskGraphic = false;
     }
     public void Reset()
     {

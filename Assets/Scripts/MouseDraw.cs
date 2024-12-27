@@ -10,13 +10,15 @@ public class MouseDraw : MonoBehaviour
      * 1. make an empty/transparent texture2d the same size as the image of the rune
      * 2. set that texture to be the image
      * 3. when the mouse moves, set pixels within certain distance of mouse to 1
-     * 4. apply texture
-     * 5. should work...?
+     * 4. when mouse is moving fast enough, draw a line of width radius*2 from point a to point b
+     * 5. apply texture
+     * 6. should work...?
      */
 
     [SerializeField] int pixelBrushRadius;
 
     Texture2D texture;
+    Texture2D sourceRuneTexture;
     RawImage mask;
     Vector3 prevMousePosition;
     Vector2 mousePositionDelta;
@@ -31,8 +33,10 @@ public class MouseDraw : MonoBehaviour
 
     void Start()
     {
-        texture = new Texture2D(728, 1490);
-        transparent = new Color[728 * 1490];
+        sourceRuneTexture = GetComponentInParent<Image>().sprite.texture; //the rune's texture
+
+        texture = new Texture2D(sourceRuneTexture.width, sourceRuneTexture.height); // new Texture2D(728, 1490);
+        transparent = new Color[texture.width * texture.height];
         for(int i = 0; i < transparent.Length; i++)
         {
             transparent[i] = clear;
