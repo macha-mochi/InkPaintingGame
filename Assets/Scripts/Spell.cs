@@ -27,6 +27,7 @@ public class Spell : MonoBehaviour
     [SerializeField] List<StrokeEnd> ends;
     [SerializeField] List<GameObject> barriers;
 
+    [SerializeField] Image cinnabar;
     [SerializeField] Image gold;
     [SerializeField] Image paper;
 
@@ -46,6 +47,10 @@ public class Spell : MonoBehaviour
     Vector2 previousMousePosition;
     Vector2 velocityDirection;
     Vector2 previousVelocityDirection;
+
+    //BAD CODE FIX LATER WITH PROPER OOP
+    [SerializeField] Image darkBg;
+    bool fadeBg = false;
 
     // Start is called before the first frame update
     void Start()
@@ -102,7 +107,7 @@ public class Spell : MonoBehaviour
             }
             timeElapsedSinceMouseSample += Time.deltaTime;
         }
-        if (runeCompleted)
+        if (runeCompleted && !fadeBg)
         {
             if(timeElapsedSinceComplete >= delayBeforeTurnGold)
             {
@@ -110,11 +115,24 @@ public class Spell : MonoBehaviour
                 if (a > 0) paper.color = new Color(1, 1, 1, a);
                 a = gold.color.a + dAlpha;
                 if (a < 1) gold.color = new Color(1, 1, 1, a);
+                if (!fadeBg && a >= 1) StartCoroutine(SpellEffect()); //bad code fix later
             }
             else
             {
                 timeElapsedSinceComplete += Time.deltaTime;
             }
+        }
+        if (fadeBg) //FIX LATER WITH OOP
+        {
+            float a = gold.color.a - dAlpha;
+            if (0 <= a && a <= 1)
+            {
+                Debug.Log("alpha: " + a);
+                cinnabar.color = new Color(1, 1, 1, a);
+                gold.color = new Color(1, 1, 1, a);
+                darkBg.color = new Color(0, 0, 0, a);
+            }
+            
         }
     }
     public void nextStroke()
@@ -179,5 +197,10 @@ public class Spell : MonoBehaviour
         if (barriers[0] != null) barriers[0].SetActive(true);
         md.ClearDrawableTexture();
         md.SetCanDraw(false);
+    }
+    private IEnumerator SpellEffect()
+    {
+        yield return new WaitForSeconds(1f);
+        fadeBg = true;
     }
 }
