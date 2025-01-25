@@ -48,7 +48,13 @@ public class Spell : MonoBehaviour
     Vector2 velocityDirection;
     Vector2 previousVelocityDirection;
 
+    //calling a method by name on complete
+    [Header("On Complete Stuff")]
+    [SerializeField] GameObject callMethodOn;
+    [SerializeField] string methodName;
+
     //BAD CODE FIX LATER WITH PROPER OOP
+    [Header("FIX LATER BY MAKING SUBCLASSES FOR RUNES")]
     [SerializeField] Image darkBg;
     bool fadeBg = false;
 
@@ -182,6 +188,11 @@ public class Spell : MonoBehaviour
         md.SetCanDraw(false);
         runeCompleted = true;
         mask.gameObject.GetComponent<Mask>().showMaskGraphic = false;
+
+        if(callMethodOn != null)
+        {
+            callMethodOn.SendMessage(methodName);
+        }
     }
     public void Reset()
     {
