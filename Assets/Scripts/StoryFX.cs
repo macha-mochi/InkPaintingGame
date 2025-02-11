@@ -9,9 +9,11 @@ public class StoryFX : MonoBehaviour
     [Header("Change BG To Teaset")]
     [SerializeField] SpriteRenderer backgroundToChangeToTeaset;
     [SerializeField] Sprite teasetBackground;
+
     public void ChangeBackgroundToTeaset()
     {
         //backgroundToChangeToTeaset.sprite = teasetBackground;
         Debug.Log("background changed, go back and uncomment real code later XD");
     }
+
 }

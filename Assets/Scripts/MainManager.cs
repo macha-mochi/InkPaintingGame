@@ -125,22 +125,16 @@ public class MainManager : MonoBehaviour
                         "Learn Spells: " + numLearnCurrent + "/" + learnNeeded;
                 }
 
-                Debug.Log("[cultivate X times] go to library for another commission, get info on first one");
+                Debug.Log("[cultivate X times] player goes to tea masters garden, does commission and buys tea, unlock location");
                 break;
             case 7:
                 locations[6].isUnlocked = false;
                 locations[7].isUnlocked = true;
                 locations[7].canProgressStory = true;
-                Debug.Log("player at tea masters garden, does commission and buys tea, unlock location");
+                Debug.Log("player goes to maple forest, unlock location");
                 break;
             case 8:
                 locations[7].isUnlocked = false;
-                locations[8].isUnlocked = true;
-                locations[8].canProgressStory = true;
-                Debug.Log("player goes to maple forest, unlock location");
-                break;
-            case 9:
-                locations[8].isUnlocked = false;
 
                 //unlocked locations = room, library, lake, tea garden, maple forest
                 locations[2].isUnlocked = true; //room
@@ -149,10 +143,10 @@ public class MainManager : MonoBehaviour
                 locations[3].canCultivate = true;
                 locations[5].isUnlocked = true; //lake
                 locations[5].canCultivate = true;
-                locations[7].isUnlocked = true; //tea garden
+                locations[6].isUnlocked = true; //tea garden
+                locations[6].canCultivate = true;
+                locations[7].isUnlocked = true; //maple forest
                 locations[7].canCultivate = true;
-                locations[8].isUnlocked = true; //maple forest
-                locations[8].canCultivate = true;
 
                 practiceNeeded = 2;
                 learnNeeded = 2;
@@ -168,8 +162,8 @@ public class MainManager : MonoBehaviour
                      * learn: new spell, but if they try to do 'learn' again AFTER meeting criteria,
                      *      just do practice instead to save new spells for later
                      */
-                    locations[9].isUnlocked = true;
-                    locations[9].canProgressStory = true;
+                    locations[8].isUnlocked = true;
+                    locations[8].canProgressStory = true;
                 }
                 else
                 {
@@ -180,16 +174,16 @@ public class MainManager : MonoBehaviour
 
                 Debug.Log("[cultivate X times] player is at their room, mc realizes theyve been here for while");
                 break;
+            case 9:
+                locations[8].isUnlocked = false;
+                locations[9].isUnlocked = true;
+                locations[9].canProgressStory = true;
+                Debug.Log("player in desert, pretty AF");
+                break;
             case 10:
                 locations[9].isUnlocked = false;
                 locations[10].isUnlocked = true;
                 locations[10].canProgressStory = true;
-                Debug.Log("player in desert, pretty AF");
-                break;
-            case 11:
-                locations[10].isUnlocked = false;
-                locations[11].isUnlocked = true;
-                locations[11].canProgressStory = true;
                 Debug.Log("player back at masters house, game ends");
                 break;
             default:
