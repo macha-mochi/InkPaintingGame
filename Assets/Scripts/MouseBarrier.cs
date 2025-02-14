@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 public class MouseBarrier : MonoBehaviour, IPointerEnterHandler
 {
-    Spell s;
+    LearnSpell s;
     public void OnPointerEnter(PointerEventData eventData)
     {
         Debug.Log("entered");
@@ -14,6 +14,6 @@ public class MouseBarrier : MonoBehaviour, IPointerEnterHandler
     // Start is called before the first frame update
     void Start()
     {
-        s = GetComponentInParent<Spell>();
+        s = GetComponentInParent<LearnSpell>();
     }
 }

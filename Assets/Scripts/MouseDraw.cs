@@ -35,7 +35,7 @@ public class MouseDraw : MonoBehaviour
     {
         sourceRuneTexture = GetComponentInParent<Image>().sprite.texture; //the rune's texture
 
-        texture = new Texture2D(sourceRuneTexture.width, sourceRuneTexture.height); // new Texture2D(728, 1490);
+        texture = new Texture2D(sourceRuneTexture.width, sourceRuneTexture.height);
         transparent = new Color[texture.width * texture.height];
         for(int i = 0; i < transparent.Length; i++)
         {
@@ -261,5 +261,9 @@ public class MouseDraw : MonoBehaviour
     public void SetCanDraw(bool b)
     {
         canDraw = b;
+    }
+    public Texture2D GetEditableTexture()
+    {
+        return texture;
     }
 }

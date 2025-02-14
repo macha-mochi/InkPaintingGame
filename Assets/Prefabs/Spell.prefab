@@ -479,6 +479,7 @@ GameObject:
   m_Component:
   - component: {fileID: 134713054871606880}
   - component: {fileID: 134713054871606881}
+  - component: {fileID: 8710575361544446645}
   m_Layer: 5
   m_Name: Spell
   m_TagString: Untagged
@@ -563,7 +564,23 @@ MonoBehaviour:
   gold: {fileID: 134713055322295891}
   paper: {fileID: 134713055390824386}
   timeBeforeFail: 3
+  callMethodOn: {fileID: 0}
+  methodName: 
   darkBg: {fileID: 0}
+--- !u!114 &8710575361544446645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134713054871606887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02f878f0f1bb5475bb2ffe4f71370360, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runeMaskTex: {fileID: 0}
+  editableMaskTex: {fileID: 0}
 --- !u!1 &134713054893784665
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,8 +796,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 83, y: -310}
-  m_SizeDelta: {x: 728, y: 1490}
+  m_AnchoredPosition: {x: 17, y: 11}
+  m_SizeDelta: {x: 420, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &134713055058253323
 CanvasRenderer:

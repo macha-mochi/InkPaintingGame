@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Spell : MonoBehaviour
+public class LearnSpell : MonoBehaviour
 {
     /* DETECTING IF THEY'RE IN THE LINES
      * 1. if the mouse moves outside the masked texture of the character we count that as wrong
@@ -183,7 +183,7 @@ public class Spell : MonoBehaviour
     }
     public void OnRuneCompleted()
     {
-        Debug.Log("rune completed");
+        Debug.Log("done learning rune");
         drawingStarted = false;
         md.SetCanDraw(false);
         runeCompleted = true;

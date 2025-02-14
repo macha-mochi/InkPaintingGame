@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class StrokeStart : MonoBehaviour
 {
-    Spell s;
+    LearnSpell s;
     RectTransform rt;
     Vector2 centerPos_Screen;
     
     // Start is called before the first frame update
     void Start()
     {
-        s = transform.parent.GetComponent<Spell>();
+        s = transform.parent.GetComponent<LearnSpell>();
 
         Vector3[] v = new Vector3[4];
         rt = GetComponent<RectTransform>();
