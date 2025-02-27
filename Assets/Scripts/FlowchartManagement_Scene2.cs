@@ -22,12 +22,21 @@ public class FlowchartManagement_Scene2 : MonoBehaviour
 
     public void OnFirstRuneDone()
     {
-        Destroy(rune1);
+        StartCoroutine(MakeSecondRune());
+    }
+    private IEnumerator MakeSecondRune()
+    {
+        yield return new WaitForSeconds(3.5f);
         rune2.SetActive(true);
-        Debug.Log("rune 1 destroyed, set 2nd one active");
+        Debug.Log("rune 1 done, set 2nd one active");
     }
     public void OnSecondRuneDone()
     {
+        StartCoroutine(MoveOn());
+    }
+    private IEnumerator MoveOn()
+    {
+        yield return new WaitForSeconds(3.5f);
         flowchart.ExecuteBlock("afterRunes");
         Debug.Log("moved on to next part of story.");
     }

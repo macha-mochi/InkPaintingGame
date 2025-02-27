@@ -41,6 +41,7 @@ public class LearnSpell : MonoBehaviour
     float dAlpha = 0.003f;
     float delayBeforeTurnGold = 0.8f;
     float timeElapsedSinceComplete = 0;
+    bool fadeFromGold = false;
 
     float timeBetweenMouseSample = 0.1f;
     float timeElapsedSinceMouseSample = 0;
@@ -52,11 +53,6 @@ public class LearnSpell : MonoBehaviour
     [Header("On Complete Stuff")]
     [SerializeField] GameObject callMethodOn;
     [SerializeField] string methodName;
-
-    //BAD CODE FIX LATER WITH PROPER OOP
-    [Header("FIX LATER BY MAKING SUBCLASSES FOR RUNES")]
-    [SerializeField] Image darkBg;
-    bool fadeBg = false;
 
     // Start is called before the first frame update
     void Start()
@@ -113,7 +109,7 @@ public class LearnSpell : MonoBehaviour
             }
             timeElapsedSinceMouseSample += Time.deltaTime;
         }
-        if (runeCompleted && !fadeBg)
+        if (runeCompleted && !fadeFromGold)
         {
             if(timeElapsedSinceComplete >= delayBeforeTurnGold)
             {
@@ -121,22 +117,24 @@ public class LearnSpell : MonoBehaviour
                 if (a > 0) paper.color = new Color(1, 1, 1, a);
                 a = gold.color.a + dAlpha;
                 if (a < 1) gold.color = new Color(1, 1, 1, a);
-                if (!fadeBg && a >= 1) StartCoroutine(SpellEffect()); //bad code fix later
+                if (!fadeFromGold && a >= 1) StartCoroutine(Wait(1f));
             }
             else
             {
                 timeElapsedSinceComplete += Time.deltaTime;
             }
         }
-        if (fadeBg) //FIX LATER WITH OOP
+        if (fadeFromGold)
         {
             float a = gold.color.a - dAlpha;
-            if (0 <= a && a <= 1)
+            if(a <= 0)
             {
-                Debug.Log("alpha: " + a);
+                Destroy(gameObject);
+            }
+            else
+            {
                 cinnabar.color = new Color(1, 1, 1, a);
                 gold.color = new Color(1, 1, 1, a);
-                darkBg.color = new Color(0, 0, 0, a);
             }
             
         }
@@ -209,9 +207,9 @@ public class LearnSpell : MonoBehaviour
         md.ClearDrawableTexture();
         md.SetCanDraw(false);
     }
-    private IEnumerator SpellEffect()
+    private IEnumerator Wait(float delay)
     {
-        yield return new WaitForSeconds(1f);
-        fadeBg = true;
+        yield return new WaitForSeconds(delay);
+        fadeFromGold = true;
     }
 }

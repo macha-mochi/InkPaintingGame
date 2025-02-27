@@ -14,6 +14,13 @@ public class PracticeSpell : MonoBehaviour
      * but if they stop for too long (like >3 sec) it should be a fail and then you restart
      */
 
+    /*
+     * idea for how to implement specific effects per type of rune (do if time, after finishing bg's and stuff):
+     * have a class that's like Spell and extends monobehaviour
+     * -> this class would contain logic for interacting with LearnSpell/PracticeSpell to do whatever at the same time as the rune is fading (or not)
+     * and then have subclasses of that class that override the Update() or whatever method?
+     */
+
     [SerializeField] MouseDraw md;
     [SerializeField] Texture2D runeMaskTex;
     Texture2D editableMaskTex;
@@ -24,9 +31,16 @@ public class PracticeSpell : MonoBehaviour
     Vector3 mousePositionDelta;
     float timeSinceMouseStopped = 0;
 
+    [SerializeField] Image cinnabar;
+    [SerializeField] Image gold;
+    [SerializeField] Image paper;
     float timeSinceLastCheck = 0;
     bool drawingStarted = false; //you shouldn't be checking if they fail if they havent even started LMAO
     bool runeCompleted = false;
+    float dAlpha = 0.003f;
+    float delayBeforeTurnGold = 0.8f;
+    float timeElapsedSinceComplete = 0;
+    bool fadeFromGold = false;
 
     //calling a method by name on complete
     [Header("On Complete Stuff")]
@@ -80,6 +94,35 @@ public class PracticeSpell : MonoBehaviour
                 Reset();
             }
         }
+        if (runeCompleted && !fadeFromGold)
+        {
+            if (timeElapsedSinceComplete >= delayBeforeTurnGold)
+            {
+                float a = paper.color.a - dAlpha;
+                if (a > 0) paper.color = new Color(1, 1, 1, a);
+                a = gold.color.a + dAlpha;
+                if (a < 1) gold.color = new Color(1, 1, 1, a);
+                if (!fadeFromGold && a >= 1) StartCoroutine(Wait(1f));
+            }
+            else
+            {
+                timeElapsedSinceComplete += Time.deltaTime;
+            }
+        }
+        if (fadeFromGold)
+        {
+            float a = gold.color.a - dAlpha;
+            if (a <= 0)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                cinnabar.color = new Color(1, 1, 1, a);
+                gold.color = new Color(1, 1, 1, a);
+            }
+
+        }
     }
     private float GetPercentFilled()
     {
@@ -113,11 +156,16 @@ public class PracticeSpell : MonoBehaviour
         Debug.Log("done practicing rune");
         drawingStarted = false;
         runeCompleted = true;
-        md.SetCanDraw(false);
+        //md.SetCanDraw(false);
 
         if (callMethodOn != null)
         {
             callMethodOn.SendMessage(methodName);
         }
+    }
+    private IEnumerator Wait(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        fadeFromGold = true;
     }
 }
