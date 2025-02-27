@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fungus;
 
 public class StoryFX : MonoBehaviour
 {
@@ -15,5 +16,22 @@ public class StoryFX : MonoBehaviour
         //backgroundToChangeToTeaset.sprite = teasetBackground;
         Debug.Log("background changed, go back and uncomment real code later XD");
     }
-
+    [Header("Change BG To Dunhuang")]
+    [SerializeField] SpriteRenderer backgroundToChangeToDunhuang;
+    [SerializeField] Sprite dunhuangBackground;
+    public void ChangeBackgroundToDunhuang()
+    {
+        //backgroundToChangeToDunhuang.sprite = dunhuangBackground;
+        Debug.Log("background changed, go back and uncomment real code later XD");
+    }
+    [Header("Change BG To Sunset")]
+    [SerializeField] SpriteRenderer backgroundToChangeToSunset;
+    [SerializeField] Sprite sunsetBackground;
+    [SerializeField] Flowchart scene9Flowchart;
+    public void ChangeBackgroundToSunset()
+    {
+        //backgroundToChangeToSunset.sprite = sunsetBackground;
+        Debug.Log("background changed, go back and uncomment real code later XD");
+        scene9Flowchart.ExecuteBlock("Sunset");
+    }
 }
