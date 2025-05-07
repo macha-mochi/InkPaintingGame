@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Story.unity
     guid: 858b95ce7fb9247bd915b25e269ac026
   - enabled: 1
-    path: Assets/Scenes/ForestPath.unity
-    guid: e6b5afbe2f87646f197fcf4b3418497d
+    path: Assets/Scenes/Credits.unity
+    guid: c074acc4d34634013a1ef2ffcf889668
   m_configObjects: {}

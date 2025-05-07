@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MainManager : MonoBehaviour
 {
@@ -187,6 +188,7 @@ public class MainManager : MonoBehaviour
                 Debug.Log("player back at masters house, game ends");
                 break;
             default:
+                SceneManager.LoadScene(2); //go to credits
                 break;
         }
 
