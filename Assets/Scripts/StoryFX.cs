@@ -13,16 +13,16 @@ public class StoryFX : MonoBehaviour
 
     public void ChangeBackgroundToTeaset()
     {
-        //backgroundToChangeToTeaset.sprite = teasetBackground;
-        Debug.Log("background changed, go back and uncomment real code later XD");
+        backgroundToChangeToTeaset.sprite = teasetBackground;
+        backgroundToChangeToTeaset.transform.localScale = new Vector3(1.04f, 1.04f, 1);
     }
     [Header("Change BG To Dunhuang")]
     [SerializeField] SpriteRenderer backgroundToChangeToDunhuang;
     [SerializeField] Sprite dunhuangBackground;
     public void ChangeBackgroundToDunhuang()
     {
-        //backgroundToChangeToDunhuang.sprite = dunhuangBackground;
-        Debug.Log("background changed, go back and uncomment real code later XD");
+        backgroundToChangeToDunhuang.sprite = dunhuangBackground;
+        backgroundToChangeToDunhuang.transform.localScale = new Vector3(1.03f, 1.03f, 1);
     }
     [Header("Change BG To Sunset")]
     [SerializeField] SpriteRenderer backgroundToChangeToSunset;
@@ -30,8 +30,8 @@ public class StoryFX : MonoBehaviour
     [SerializeField] Flowchart scene9Flowchart;
     public void ChangeBackgroundToSunset()
     {
-        //backgroundToChangeToSunset.sprite = sunsetBackground;
-        Debug.Log("background changed, go back and uncomment real code later XD");
+        backgroundToChangeToSunset.sprite = sunsetBackground;
+        backgroundToChangeToSunset.transform.localScale = new Vector3(0.99f, 0.99f, 1);
         scene9Flowchart.ExecuteBlock("Sunset");
     }
 }
