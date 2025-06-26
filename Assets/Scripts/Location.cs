@@ -19,11 +19,18 @@ public class Location : MonoBehaviour
     {
         if (!popup.activeInHierarchy)
         {
-            popup.SetActive(true);
-            this.transform.SetAsLastSibling();
-            story.interactable = canProgressStory;
-            practice.interactable = canCultivate;
-            learn.interactable = canCultivate;
+            if(canProgressStory && !canCultivate)
+            {
+                story.onClick.Invoke();
+            }
+            else
+            {
+                popup.SetActive(true);
+                this.transform.SetAsLastSibling();
+                story.interactable = canProgressStory;
+                practice.interactable = canCultivate;
+                learn.interactable = canCultivate;
+            }
         }
         else
         {

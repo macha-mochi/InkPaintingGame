@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Fungus;
 
 public class UIManager : MonoBehaviour
 {
@@ -41,5 +42,22 @@ public class UIManager : MonoBehaviour
     {
         MainManager.cultivationMode = 'l';
         MainManager.cultivationLocation = loc;
+    }
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+    [Header("Settings")]
+    [SerializeField] GameObject settingsPopup;
+    [SerializeField] DialogInput sayDialog;
+    public void OpenSettings()
+    {
+        settingsPopup.SetActive(true);
+        sayDialog.SetCanAdvanceNextLine(false);
+    }
+    public void CloseSettings()
+    {
+        settingsPopup.SetActive(false);
+        sayDialog.SetCanAdvanceNextLine(true);
     }
 }

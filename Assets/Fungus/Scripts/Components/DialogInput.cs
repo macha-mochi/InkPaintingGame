@@ -149,7 +149,7 @@ namespace Fungus
         /// </summary>
         public virtual void SetNextLineFlag()
         {
-            if(writer.IsWaitingForInput || writer.IsWriting)
+            if(canAdvanceNextLine && (writer.IsWaitingForInput || writer.IsWriting))
             {
                 nextLineInputFlag = true;
             }
@@ -200,6 +200,12 @@ namespace Fungus
             {
                 SetNextLineFlag();
             }
+        }
+
+        protected bool canAdvanceNextLine = true;
+        public virtual void SetCanAdvanceNextLine(bool b)
+        {
+            canAdvanceNextLine = b;
         }
 
         #endregion

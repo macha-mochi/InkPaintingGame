@@ -16,6 +16,10 @@ public class StartScreenUIManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+    public void OpenGallery()
+    {
+        SceneManager.LoadScene(4);
+    }
     [Header("Settings")]
     [SerializeField] GameObject settingsPopup;
     public void OpenSettings()

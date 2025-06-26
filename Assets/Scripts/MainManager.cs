@@ -17,6 +17,7 @@ public class MainManager : MonoBehaviour
 
     private void Start()
     {
+        PlayerPrefs.SetInt("MaxProgress", Mathf.Max(PlayerPrefs.GetInt("MaxProgress"), progress));
         PlayerPrefs.SetInt("Progress", progress);
         PlayerPrefs.SetInt("NumPracticeCurrent", numPracticeCurrent);
         PlayerPrefs.SetInt("NumLearnCurrent", numLearnCurrent);
