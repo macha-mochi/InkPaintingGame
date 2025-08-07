@@ -29,7 +29,7 @@ public class FlowchartManagement_Scene9 : MonoBehaviour
     }
     private IEnumerator AfterCastLight()
     {
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(4f);
         flowchart.ExecuteBlock("AfterCastLight");
     }
     public void LeaveTemple()

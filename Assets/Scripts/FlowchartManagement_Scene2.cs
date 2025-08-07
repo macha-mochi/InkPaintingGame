@@ -26,7 +26,7 @@ public class FlowchartManagement_Scene2 : MonoBehaviour
     }
     private IEnumerator MakeSecondRune()
     {
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(4f);
         rune2.SetActive(true);
         Debug.Log("rune 1 done, set 2nd one active");
     }
@@ -36,7 +36,7 @@ public class FlowchartManagement_Scene2 : MonoBehaviour
     }
     private IEnumerator MoveOn()
     {
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(4f);
         flowchart.ExecuteBlock("afterRunes");
         Debug.Log("moved on to next part of story.");
     }

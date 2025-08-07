@@ -31,6 +31,7 @@ public class PracticeSpell : MonoBehaviour
     Vector3 mousePositionDelta;
     float timeSinceMouseStopped = 0;
 
+    [SerializeField] Image maskImage;
     [SerializeField] Image cinnabar;
     [SerializeField] Image gold;
     [SerializeField] Image paper;
@@ -120,6 +121,7 @@ public class PracticeSpell : MonoBehaviour
             {
                 cinnabar.color = new Color(1, 1, 1, a);
                 gold.color = new Color(1, 1, 1, a);
+                maskImage.color = new Color(1, 1, 1, Mathf.Min(maskImage.color.a, a));
             }
 
         }

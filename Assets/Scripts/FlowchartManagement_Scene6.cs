@@ -25,7 +25,7 @@ public class FlowchartManagement_Scene6 : MonoBehaviour
     }
     private IEnumerator AfterCastRead()
     {
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(4f);
         flowchart.ExecuteBlock("AfterCastReadEnergy");
     }
     public void SetShareEnergyActive()
@@ -38,7 +38,7 @@ public class FlowchartManagement_Scene6 : MonoBehaviour
     }
     private IEnumerator AfterCastShare()
     {
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(4f);
         flowchart.ExecuteBlock("AfterCastShareEnergy");
     }
 }

@@ -27,7 +27,7 @@ public class FlowchartManagement_Scene4 : MonoBehaviour
     }
     private IEnumerator AfterCastDetect()
     {
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(4f);
         flowchart.ExecuteBlock("afterCastDetectionSpell");
     }
     public void SetExorciseRuneActive()
@@ -40,7 +40,7 @@ public class FlowchartManagement_Scene4 : MonoBehaviour
     }
     private IEnumerator AfterCastExorcise()
     {
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(4f);
         flowchart.ExecuteBlock("afterExorciseSpell");
     }
 }

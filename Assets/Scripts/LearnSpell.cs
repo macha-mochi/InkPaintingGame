@@ -135,6 +135,7 @@ public class LearnSpell : MonoBehaviour
             {
                 cinnabar.color = new Color(1, 1, 1, a);
                 gold.color = new Color(1, 1, 1, a);
+                mask.color = new Color(1, 1, 1, Mathf.Min(mask.color.a, a));
             }
             
         }
@@ -185,7 +186,6 @@ public class LearnSpell : MonoBehaviour
         drawingStarted = false;
         md.SetCanDraw(false);
         runeCompleted = true;
-        mask.gameObject.GetComponent<Mask>().showMaskGraphic = false;
 
         if(callMethodOn != null)
         {

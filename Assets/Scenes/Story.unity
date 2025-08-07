@@ -457,8 +457,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 89702951}
-  selectedCommands:
-  - {fileID: 89702969}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -963,7 +962,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &89702969
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1136,9 +1135,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 173985320}
-  selectedCommands:
-  - {fileID: 173985337}
+  - {fileID: 173985305}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -2331,9 +2329,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 255455486}
-  selectedCommands:
-  - {fileID: 255455493}
+  - {fileID: 255455473}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -2866,7 +2863,7 @@ MonoBehaviour:
   targetGameObjectOLD: {fileID: 0}
 --- !u!114 &255455493
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -3834,7 +3831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5348510991020508478, guid: ce8642b028d324392bde423979ec1672, type: 3}
       propertyPath: m_Name
-      value: Scene1
+      value: Scene1-down mountain
       objectReference: {fileID: 0}
     - target: {fileID: 5348510991020508478, guid: ce8642b028d324392bde423979ec1672, type: 3}
       propertyPath: m_IsActive
@@ -4428,7 +4425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5348510991020508478, guid: ce8642b028d324392bde423979ec1672, type: 3}
       propertyPath: m_Name
-      value: Scene10
+      value: Scene10-return home
       objectReference: {fileID: 0}
     - target: {fileID: 5348510991020508478, guid: ce8642b028d324392bde423979ec1672, type: 3}
       propertyPath: m_IsActive
@@ -4591,7 +4588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5348510991020508478, guid: ce8642b028d324392bde423979ec1672, type: 3}
       propertyPath: m_Name
-      value: Scene2
+      value: Scene2-mc arrives
       objectReference: {fileID: 0}
     - target: {fileID: 5348510991020508478, guid: ce8642b028d324392bde423979ec1672, type: 3}
       propertyPath: m_IsActive
@@ -5014,7 +5011,7 @@ PrefabInstance:
       objectReference: {fileID: 748408299}
     - target: {fileID: 5348510991020508478, guid: ce8642b028d324392bde423979ec1672, type: 3}
       propertyPath: m_Name
-      value: Scene9
+      value: Scene9-desert
       objectReference: {fileID: 0}
     - target: {fileID: 5348510991020508478, guid: ce8642b028d324392bde423979ec1672, type: 3}
       propertyPath: m_IsActive
@@ -5246,7 +5243,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 770245835}
+  - {fileID: 770245827}
   selectedCommands: []
   variables: []
   description: 
@@ -5761,7 +5758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5348510991020508478, guid: ce8642b028d324392bde423979ec1672, type: 3}
       propertyPath: m_Name
-      value: Scene5
+      value: Scene5-harbor scene
       objectReference: {fileID: 0}
     - target: {fileID: 5348510991020508478, guid: ce8642b028d324392bde423979ec1672, type: 3}
       propertyPath: m_IsActive
@@ -6407,8 +6404,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 932096131}
-  selectedCommands:
-  - {fileID: 932096144}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -6968,9 +6964,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 958691500}
-  selectedCommands:
-  - {fileID: 958691521}
+  - {fileID: 958691486}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -7026,7 +7021,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 66
-    y: 70
+    y: 69
     width: 111
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -7949,7 +7944,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &958691521
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -7997,7 +7992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 173985303}
+  selectedFlowchart: {fileID: 770245825}
 --- !u!4 &959210897
 Transform:
   m_ObjectHideFlags: 1
@@ -8282,7 +8277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 68
+    x: 67
     y: 70
     width: 111
     height: 40
@@ -8449,7 +8444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5348510991020508478, guid: ce8642b028d324392bde423979ec1672, type: 3}
       propertyPath: m_Name
-      value: Scene8
+      value: Scene8-mc decides to leave @ room
       objectReference: {fileID: 0}
     - target: {fileID: 5348510991020508478, guid: ce8642b028d324392bde423979ec1672, type: 3}
       propertyPath: m_IsActive
@@ -8536,7 +8531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5348510991020508478, guid: ce8642b028d324392bde423979ec1672, type: 3}
       propertyPath: m_Name
-      value: Scene7
+      value: Scene7-maple
       objectReference: {fileID: 0}
     - target: {fileID: 5348510991020508478, guid: ce8642b028d324392bde423979ec1672, type: 3}
       propertyPath: m_IsActive
@@ -9756,7 +9751,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5348510991020508478, guid: ce8642b028d324392bde423979ec1672, type: 3}
       propertyPath: m_Name
-      value: Scene6
+      value: Scene6-tea house
       objectReference: {fileID: 0}
     - target: {fileID: 5348510991020508478, guid: ce8642b028d324392bde423979ec1672, type: 3}
       propertyPath: m_IsActive
@@ -9878,7 +9873,7 @@ MonoBehaviour:
   nameColor: {r: 1, g: 1, b: 1, a: 1}
   soundEffect: {fileID: 0}
   portraits:
-  - {fileID: 21300000, guid: 9bdedfa4650174106a3115624f193b99, type: 3}
+  - {fileID: -118830320, guid: 3c12d54b7db02474dad2c71a58760bae, type: 3}
   portraitsFace: 0
   setSayDialog: {fileID: 0}
   description: 
@@ -10301,7 +10296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5348510991020508478, guid: ce8642b028d324392bde423979ec1672, type: 3}
       propertyPath: m_Name
-      value: Scene4
+      value: Scene4-bridge house
       objectReference: {fileID: 0}
     - target: {fileID: 5348510991020508478, guid: ce8642b028d324392bde423979ec1672, type: 3}
       propertyPath: m_IsActive
@@ -10388,7 +10383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5348510991020508478, guid: ce8642b028d324392bde423979ec1672, type: 3}
       propertyPath: m_Name
-      value: Scene3
+      value: Scene3-get 1st comm @ lib
       objectReference: {fileID: 0}
     - target: {fileID: 5348510991020508478, guid: ce8642b028d324392bde423979ec1672, type: 3}
       propertyPath: m_IsActive
@@ -11361,7 +11356,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1897763376
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -11429,8 +11424,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1907395394}
-  selectedCommands:
-  - {fileID: 1907395399}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -12470,7 +12464,7 @@ PrefabInstance:
       objectReference: {fileID: 5348510992308454807}
     - target: {fileID: 5348510991020508478, guid: ce8642b028d324392bde423979ec1672, type: 3}
       propertyPath: m_Name
-      value: Scene0
+      value: Scene0-masters house
       objectReference: {fileID: 0}
     - target: {fileID: 5348510991020508478, guid: ce8642b028d324392bde423979ec1672, type: 3}
       propertyPath: m_IsActive
