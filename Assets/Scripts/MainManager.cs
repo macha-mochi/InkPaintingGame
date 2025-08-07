@@ -85,9 +85,9 @@ public class MainManager : MonoBehaviour
                 }
                 else
                 {
-                    objective.text =
-                        "Practice Spells: " + numPracticeCurrent + "/" + practiceNeeded + "\n" +
+                    string text = "Practice Spells: " + numPracticeCurrent + "/" + practiceNeeded + "\n" +
                         "Learn Spells: " + numLearnCurrent + "/" + learnNeeded;
+                    objective.text = text;
                 }
 
                 Debug.Log("[cultivate X times] then player at lake, on boat, unlock lake location");
