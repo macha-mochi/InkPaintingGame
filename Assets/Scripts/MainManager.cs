@@ -67,12 +67,12 @@ public class MainManager : MonoBehaviour
                 locations[3].canCultivate = true;
 
                 int practiceNeeded = 2;
-                int learnNeeded = 1;
+                int learnNeeded = 2;
                 numPracticeCurrent = Mathf.Min(numPracticeCurrent, practiceNeeded);
                 numLearnCurrent = Mathf.Min(numLearnCurrent, learnNeeded);
                 if(numPracticeCurrent == practiceNeeded && numLearnCurrent == learnNeeded)
                 {
-                    objective.text = "Story Progression Available";
+                    objective.text = "Story Progression Available: Harbor";
 
                     //still have other locations available, it just wont count extra
                     /*
@@ -104,12 +104,12 @@ public class MainManager : MonoBehaviour
                 locations[5].canCultivate = true;
 
                 practiceNeeded = 2;
-                learnNeeded = 2;
+                learnNeeded = 1;
                 numPracticeCurrent = Mathf.Min(numPracticeCurrent, practiceNeeded);
                 numLearnCurrent = Mathf.Min(numLearnCurrent, learnNeeded);
                 if (numPracticeCurrent == practiceNeeded && numLearnCurrent == learnNeeded)
                 {
-                    objective.text = "Story Progression Available";
+                    objective.text = "Story Progression Available: Tea Garden";
 
                     //still have other locations available, it just wont count extra
                     /*
@@ -150,13 +150,13 @@ public class MainManager : MonoBehaviour
                 locations[7].isUnlocked = true; //maple forest
                 locations[7].canCultivate = true;
 
-                practiceNeeded = 2;
-                learnNeeded = 2;
+                practiceNeeded = 1;
+                learnNeeded = 1;
                 numPracticeCurrent = Mathf.Min(numPracticeCurrent, practiceNeeded);
                 numLearnCurrent = Mathf.Min(numLearnCurrent, learnNeeded);
                 if (numPracticeCurrent == practiceNeeded && numLearnCurrent == learnNeeded)
                 {
-                    objective.text = "Story Progression Available";
+                    objective.text = "Story Progression Available: My Room";
 
                     //still have other locations available, it just wont count extra
                     /*
@@ -189,7 +189,7 @@ public class MainManager : MonoBehaviour
                 Debug.Log("player back at masters house, game ends");
                 break;
             default:
-                SceneManager.LoadScene(2); //go to credits
+                SceneManager.LoadScene(3); //go to credits
                 break;
         }
 

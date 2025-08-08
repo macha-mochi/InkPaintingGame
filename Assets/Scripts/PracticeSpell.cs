@@ -4,6 +4,7 @@ using Fungus;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PracticeSpell : MonoBehaviour
 {
@@ -20,9 +21,12 @@ public class PracticeSpell : MonoBehaviour
      * -> this class would contain logic for interacting with LearnSpell/PracticeSpell to do whatever at the same time as the rune is fading (or not)
      * and then have subclasses of that class that override the Update() or whatever method?
      */
+    [Header("USE THIS! :D")]
+    [SerializeField] SpellData spellAttributes;
 
+    [Header("Visual Stuff")]
     [SerializeField] MouseDraw md;
-    [SerializeField] Texture2D runeMaskTex;
+    Texture2D runeMaskTex;
     Texture2D editableMaskTex;
     Color[] runeMask;
     Color[] editableMask;
@@ -35,6 +39,7 @@ public class PracticeSpell : MonoBehaviour
     [SerializeField] Image cinnabar;
     [SerializeField] Image gold;
     [SerializeField] Image paper;
+
     float timeSinceLastCheck = 0;
     bool drawingStarted = false; //you shouldn't be checking if they fail if they havent even started LMAO
     bool runeCompleted = false;
@@ -42,6 +47,10 @@ public class PracticeSpell : MonoBehaviour
     float delayBeforeTurnGold = 0.8f;
     float timeElapsedSinceComplete = 0;
     bool fadeFromGold = false;
+
+    [Header("Text Stuff")]
+    [SerializeField] TextMeshProUGUI spellDesc;
+    [SerializeField] TextMeshProUGUI reasonForFail;
 
     //calling a method by name on complete
     [Header("On Complete Stuff")]
@@ -51,7 +60,12 @@ public class PracticeSpell : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        runeMaskTex = spellAttributes.runeSprite.texture;
+        maskImage.overrideSprite = spellAttributes.runeSprite;
         runeMask = runeMaskTex.GetPixels();
+
+        spellDesc.text = spellAttributes.description;
+
         prevMousePosition = Input.mousePosition;
     }
 
@@ -143,12 +157,20 @@ public class PracticeSpell : MonoBehaviour
     }
     private void Reset()
     {
-        Debug.Log("failed bc waited for too long");
+        reasonForFail.text = "Mouse was stopped for too long!";
+        StartCoroutine(ClearText(1.5f));
+
         drawingStarted = false;
         timeSinceLastCheck = 0;
         timeSinceMouseStopped = 0;
         md.ClearDrawableTexture();
     }
+    private IEnumerator ClearText(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        reasonForFail.text = "";
+    }
+
     public bool GetDrawingStarted()
     {
         return drawingStarted;
