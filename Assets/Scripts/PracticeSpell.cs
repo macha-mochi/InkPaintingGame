@@ -22,7 +22,7 @@ public class PracticeSpell : MonoBehaviour
      * and then have subclasses of that class that override the Update() or whatever method?
      */
     [Header("USE THIS! :D")]
-    [SerializeField] SpellData spellAttributes;
+    public SpellData spellAttributes;
 
     [Header("Visual Stuff")]
     [SerializeField] MouseDraw md;
@@ -54,8 +54,9 @@ public class PracticeSpell : MonoBehaviour
 
     //calling a method by name on complete
     [Header("On Complete Stuff")]
-    [SerializeField] GameObject callMethodOn;
-    [SerializeField] string methodName;
+    public GameObject callMethodOn;
+    public string methodName;
+    SpellcastingPanel panel;
 
     // Start is called before the first frame update
     void Start()
@@ -66,12 +67,16 @@ public class PracticeSpell : MonoBehaviour
 
         spellDesc.text = spellAttributes.description;
 
+        panel = GetComponentInParent<SpellcastingPanel>();
+        if (panel != null) panel.ResetAlpha();
+
         prevMousePosition = Input.mousePosition;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(panel);
         if(editableMaskTex == null)
         {
             editableMaskTex = md.GetEditableTexture();
@@ -129,6 +134,7 @@ public class PracticeSpell : MonoBehaviour
             float a = gold.color.a - dAlpha;
             if (a <= 0)
             {
+                if (panel != null) panel.isFading = true;
                 Destroy(gameObject);
             }
             else

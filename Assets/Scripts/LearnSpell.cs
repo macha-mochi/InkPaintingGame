@@ -51,14 +51,18 @@ public class LearnSpell : MonoBehaviour
 
     //calling a method by name on complete
     [Header("On Complete Stuff")]
-    [SerializeField] GameObject callMethodOn;
-    [SerializeField] string methodName;
+    public GameObject callMethodOn;
+    public string methodName;
+    SpellcastingPanel panel;
 
     // Start is called before the first frame update
     void Start()
     {
         rune = mask.sprite.texture;
         md.SetCanDraw(false);
+
+        panel = GetComponentInParent<SpellcastingPanel>();
+        if (panel != null) panel.ResetAlpha();
 
         previousMousePosition = Input.mousePosition;
         previousVelocityDirection = new Vector2(0, 0);
@@ -129,6 +133,7 @@ public class LearnSpell : MonoBehaviour
             float a = gold.color.a - dAlpha;
             if(a <= 0)
             {
+                if(panel != null) panel.isFading = true;
                 Destroy(gameObject);
             }
             else
