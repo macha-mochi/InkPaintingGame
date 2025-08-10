@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class SpellcastingPanel : MonoBehaviour
 {
     public bool isFading;
-    float originalAlpha = 0.5f;
-    float dAlpha = 0.05f;
+    float originalAlpha = 0.6f;
+    float dAlpha = 0.06f;
     Image img;
 
     private void Start()

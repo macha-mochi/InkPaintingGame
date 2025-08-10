@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runeSprite: {fileID: 21300000, guid: 44db5f874143f4dd7a5e24af43cbdeda, type: 3}
   description: Enhance Affinity for Wood
+  prefab: {fileID: 6893422082117207924, guid: 3e6b1aa4c002e4cb08048d98f0e4eaa5, type: 3}

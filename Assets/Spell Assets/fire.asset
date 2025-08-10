@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runeSprite: {fileID: 21300000, guid: 06869a0d948854a8bb89168ff6f74528, type: 3}
   description: Enhance Affinity for Fire
+  prefab: {fileID: 1174821830117015713, guid: b0adf9a3600e34c3eb816bc1ecee39d0, type: 3}

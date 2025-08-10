@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runeSprite: {fileID: 21300000, guid: 75f1f3b6bf5214975891c551e5a37068, type: 3}
   description: Enhance Affinity for Water
+  prefab: {fileID: 4483571704036676616, guid: 456a9cd355b144d93b9cc1e3bf6de6c5, type: 3}

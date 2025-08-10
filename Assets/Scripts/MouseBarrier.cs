@@ -8,7 +8,7 @@ public class MouseBarrier : MonoBehaviour, IPointerEnterHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         Debug.Log("entered");
-        if(Input.GetMouseButton(0)) s.Reset(); //only reset if they're also dragging
+        if(Input.GetMouseButton(0)) s.ResetSpell("Mouse deviated from current stroke!"); //only reset if they're also dragging
     }
 
     // Start is called before the first frame update

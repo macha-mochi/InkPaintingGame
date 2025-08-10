@@ -21,7 +21,6 @@ public class DisplayLevel : MonoBehaviour
     [SerializeField] SpellData[] spellDataList; //all spells, each one has an index, prolly alphabetically
     [SerializeField] int[] practiceSpells;
     [SerializeField] LearnSpellData learnSpellData;
-    [SerializeField] List<GameObject> learnSpellPrefabs;
 
     [Header("Other Stuff")]
     [SerializeField] GameObject cultivationDoneButton;
@@ -43,6 +42,10 @@ public class DisplayLevel : MonoBehaviour
             //choose a random rune + display what it does on the screen
             //for practice: its just all random u can get repeats
             //for learn: it shows u the ones u havent done yet but if u run out of that it just starts over
+
+            //make a spell prefab then change the correct textures
+            //could probably pair the texture with the string describing what it does in a scriptable?
+            //nvm learn spells do need their own prefabs
             if (MainManager.cultivationMode == 'p')
             {
                 DisplaySpell_Practice();
@@ -51,9 +54,6 @@ public class DisplayLevel : MonoBehaviour
             {
                 DisplaySpell_Learn();
             }
-            //make a spell prefab then change the correct textures
-              //could probably pair the texture with the string describing what it does in a scriptable?
-              //nvm learn spells do need their own prefabs
         }
         
     }
@@ -85,7 +85,21 @@ public class DisplayLevel : MonoBehaviour
             }
             learnSpellData.learnedSpells.Clear();
         }
-
+        int numUnlearned = learnSpellData.unlearnedSpells.Count;
+        int index = Random.Range(0, numUnlearned);
+        int spellNumber = learnSpellData.unlearnedSpells[index];
+        GameObject prefabToSpawn = spellDataList[spellNumber].prefab;
+        if(prefabToSpawn == null)
+        {
+            Debug.Log("NO PREFAB ASSIGNED TO CURRENT LEARN SPELL");
+            return;
+        }
+        GameObject newSpell = Instantiate(prefabToSpawn, runeSpawnLocation);
+        LearnSpell ls = newSpell.GetComponent<LearnSpell>();
+        ls.callMethodOn = this.gameObject;
+        ls.methodName = "ShowCultivationCompleteButton";
+        learnSpellData.unlearnedSpells.RemoveAt(index);
+        learnSpellData.learnedSpells.Add(spellNumber);
     }
     void DisableStoryGameObjects()
     {

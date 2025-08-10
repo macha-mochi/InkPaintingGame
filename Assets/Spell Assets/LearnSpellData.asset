@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcfeb5a804e7a499ab3e75f96e2b1b2c, type: 3}
   m_Name: LearnSpellData
   m_EditorClassIdentifier: 
-  unlearnedSpells: 000000000400000006000000080000000d0000000e0000001000000011000000
+  unlearnedSpells: 0000000004000000080000000d0000000e0000001000000011000000
   learnedSpells: 

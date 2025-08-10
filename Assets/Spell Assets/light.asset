@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runeSprite: {fileID: 21300000, guid: ccc0ac4182ef841f1b4968004a23d621, type: 3}
   description: Create Light
+  prefab: {fileID: 2993139193518835866, guid: bca840c81f6134caca7038822da26b0c, type: 3}

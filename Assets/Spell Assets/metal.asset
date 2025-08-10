@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runeSprite: {fileID: 21300000, guid: 6824b7f566ca84e348c1d54e1cbec058, type: 3}
   description: Enhance Affinity for Metal
+  prefab: {fileID: 4760669780421525096, guid: 14cd77f66d38b4b36b4169a4669ec358, type: 3}

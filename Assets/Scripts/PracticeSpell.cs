@@ -111,7 +111,7 @@ public class PracticeSpell : MonoBehaviour
             }
             if (timeSinceMouseStopped >= 3f)
             {
-                Reset();
+                ResetSpell();
             }
         }
         if (runeCompleted && !fadeFromGold)
@@ -161,7 +161,7 @@ public class PracticeSpell : MonoBehaviour
         return ((float)numSame) / total;
 
     }
-    private void Reset()
+    private void ResetSpell()
     {
         reasonForFail.text = "Mouse was stopped for too long!";
         StartCoroutine(ClearText(1.5f));

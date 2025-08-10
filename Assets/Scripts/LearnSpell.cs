@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,6 +21,10 @@ public class LearnSpell : MonoBehaviour
      * you might not even need 'progress' colliders like the racing game
      */
 
+    [Header("USE THIS! :D")]
+    public SpellData spellAttributes;
+
+    [Header("Visual Stuff")]
     [SerializeField] Image mask;
     [SerializeField] MouseDraw md;
 
@@ -49,17 +54,24 @@ public class LearnSpell : MonoBehaviour
     Vector2 velocityDirection;
     Vector2 previousVelocityDirection;
 
+    [Header("Text Stuff")]
+    [SerializeField] TextMeshProUGUI spellDesc;
+    [SerializeField] TextMeshProUGUI reasonForFail;
+
     //calling a method by name on complete
     [Header("On Complete Stuff")]
     public GameObject callMethodOn;
     public string methodName;
     SpellcastingPanel panel;
+    Coroutine clearFailTextCoroutine;
 
     // Start is called before the first frame update
     void Start()
     {
         rune = mask.sprite.texture;
         md.SetCanDraw(false);
+
+        spellDesc.text = spellAttributes.description;
 
         panel = GetComponentInParent<SpellcastingPanel>();
         if (panel != null) panel.ResetAlpha();
@@ -83,24 +95,19 @@ public class LearnSpell : MonoBehaviour
 
             if (!IsMouseInMask() && Input.GetMouseButton(0))
             {
-                Debug.Log("failed bc was dragging out of bounds");
-                Reset();
+                ResetSpell("Mouse was dragged outside lines!");
             }else if (timeSinceLastAction >= timeBeforeFail)
             {
-                Debug.Log("failed bc too slow");
-                Reset();
+                ResetSpell("Mouse was stopped for too long!");
             }else if(Input.GetMouseButtonDown(0) && !starts[currentStroke].ContainsMouse())
             {
-                Debug.Log("failed bc started a stroke where ur not supposed to");
-                Reset();
+                ResetSpell("Stroke started in incorrect place!");
             }else if (Input.GetMouseButtonUp(0) && !ends[currentStroke].ContainsMouse())
             {
-                Debug.Log("failed bc released stroke early");
-                Reset();
+                ResetSpell("Stroke was released too early!");
             }else if(Vector2.Angle(previousVelocityDirection, velocityDirection) > 160 && Input.GetMouseButton(0))
             {
-                Debug.Log("failed bc started going in wrong direction");
-                Reset();
+                ResetSpell("Stroke was drawn in the wrong direction!");
             }
             if (shouldCountTimeInactive) timeSinceLastAction += Time.deltaTime;
 
@@ -197,7 +204,7 @@ public class LearnSpell : MonoBehaviour
             callMethodOn.SendMessage(methodName);
         }
     }
-    public void Reset()
+    public void ResetSpell(string failReason)
     {
         starts[currentStroke].gameObject.SetActive(false);
         ends[currentStroke].gameObject.SetActive(false);
@@ -211,6 +218,22 @@ public class LearnSpell : MonoBehaviour
         if (barriers[0] != null) barriers[0].SetActive(true);
         md.ClearDrawableTexture();
         md.SetCanDraw(false);
+
+        reasonForFail.text = failReason;
+        if (clearFailTextCoroutine == null)
+        {
+            clearFailTextCoroutine = StartCoroutine("ClearText", 1.5f);
+        }
+        else
+        {
+            StopCoroutine(clearFailTextCoroutine);
+        }
+    } 
+    private IEnumerator ClearText(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        reasonForFail.text = "";
+        clearFailTextCoroutine = null;
     }
     private IEnumerator Wait(float delay)
     {
