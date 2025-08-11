@@ -88,9 +88,9 @@ public class LearnSpell : MonoBehaviour
             if(timeElapsedSinceMouseSample >= timeBetweenMouseSample)
             {
                 velocityDirection = (Vector2)Input.mousePosition - previousMousePosition;
-                Debug.Log(Input.mousePosition + " " + previousMousePosition);
+                /*Debug.Log(Input.mousePosition + " " + previousMousePosition);
                 Debug.Log(previousVelocityDirection + " " + velocityDirection);
-                Debug.Log(Vector2.Angle(previousVelocityDirection, velocityDirection));
+                Debug.Log(Vector2.Angle(previousVelocityDirection, velocityDirection));*/
             }
 
             if (!IsMouseInMask() && Input.GetMouseButton(0))
@@ -194,7 +194,7 @@ public class LearnSpell : MonoBehaviour
     }
     public void OnRuneCompleted()
     {
-        Debug.Log("done learning rune");
+        //Debug.Log("done learning rune");
         drawingStarted = false;
         md.SetCanDraw(false);
         runeCompleted = true;

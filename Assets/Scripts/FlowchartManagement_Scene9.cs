@@ -34,7 +34,6 @@ public class FlowchartManagement_Scene9 : MonoBehaviour
     }
     public void LeaveTemple()
     {
-        //TODO do a fade transition
         flowchart.ExecuteBlock("Sunset");
     }
 }

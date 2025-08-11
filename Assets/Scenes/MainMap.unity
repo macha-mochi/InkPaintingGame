@@ -295,7 +295,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 32823
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 8bd3d1681d67040c3b74f2db4218b8f8, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 5103eb17badb04c7da55784bb9f0bf86, type: 2}
   isGlobal: 1
   blendDistance: 0
   weight: 1
@@ -1109,7 +1109,7 @@ GameObject:
   - component: {fileID: 785059917}
   - component: {fileID: 785059919}
   - component: {fileID: 785059918}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1464,8 +1464,8 @@ Canvas:
   m_GameObject: {fileID: 1079331721}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1928,6 +1928,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a4000cc5287d44aa9c9d0f58444566f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1395664058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1395664060}
+  - component: {fileID: 1395664059}
+  m_Layer: 0
+  m_Name: TEST FACILITATOR (REMOVE)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1395664059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395664058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c0a884fa22df4a5da49b1e414315eea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1395664060
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395664058}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1072.8003, y: 740.70386, z: -4.135047}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1489910364
 GameObject:
   m_ObjectHideFlags: 0
@@ -2316,6 +2360,11 @@ MonoBehaviour:
   - {fileID: 889037616}
   - {fileID: 1799008160}
   objective: {fileID: 1489910366}
+  PPProfiles:
+  - {fileID: 11400000, guid: 5103eb17badb04c7da55784bb9f0bf86, type: 2}
+  - {fileID: 11400000, guid: c3045c58be75542f08de46b5e0ed9956, type: 2}
+  - {fileID: 11400000, guid: 6922716e8464d47e7a6f8005d62dd4e2, type: 2}
+  mainCameraPPVolume: {fileID: 519420034}
 --- !u!4 &1655256696
 Transform:
   m_ObjectHideFlags: 0

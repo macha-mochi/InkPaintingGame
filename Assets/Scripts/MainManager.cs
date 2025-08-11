@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering.PostProcessing;
 
 public class MainManager : MonoBehaviour
 {
@@ -11,9 +12,13 @@ public class MainManager : MonoBehaviour
     public static int numLearnCurrent = 0;
     public static int cultivationLocation = -1;
     public static char cultivationMode; //can be 'p' or 'l'
+    public static int activePostProcessingProfile = 0;
 
     public List<Location> locations = new List<Location>();
     [SerializeField] TextMeshProUGUI objective;
+
+    public List<PostProcessProfile> PPProfiles = new List<PostProcessProfile>();
+    [SerializeField] PostProcessVolume mainCameraPPVolume;
 
     private void Start()
     {
@@ -193,12 +198,11 @@ public class MainManager : MonoBehaviour
                 break;
         }
 
-        //i also wanna make it so that after the player finishes the game they can view a gallery of locations
-        //dont forget to do the colors
-
         foreach(Location loc in locations)
         {
             loc.gameObject.SetActive(loc.isUnlocked);
         }
+
+        mainCameraPPVolume.profile = PPProfiles[activePostProcessingProfile];
     }
 }

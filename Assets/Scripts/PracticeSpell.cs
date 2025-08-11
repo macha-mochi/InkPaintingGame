@@ -76,7 +76,6 @@ public class PracticeSpell : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(panel);
         if(editableMaskTex == null)
         {
             editableMaskTex = md.GetEditableTexture();
@@ -103,7 +102,7 @@ public class PracticeSpell : MonoBehaviour
             if (timeSinceLastCheck >= 0.5f || timeSinceMouseStopped >= 0.3f)
             {
                 float propFilled = GetPercentFilled();
-                Debug.Log("proportion filled: " + propFilled);
+                //Debug.Log("proportion filled: " + propFilled);
                 if(propFilled >= 0.9)
                 {
                     OnRuneCompleted();
@@ -183,7 +182,7 @@ public class PracticeSpell : MonoBehaviour
     }
     public void OnRuneCompleted()
     {
-        Debug.Log("done practicing rune");
+        //Debug.Log("done practicing rune");
         drawingStarted = false;
         runeCompleted = true;
         //md.SetCanDraw(false);

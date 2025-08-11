@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Fungus;
+using UnityEngine.Rendering.PostProcessing;
 
 public class DisplayLevel : MonoBehaviour
 {
@@ -25,10 +26,23 @@ public class DisplayLevel : MonoBehaviour
     [Header("Other Stuff")]
     [SerializeField] GameObject cultivationDoneButton;
 
+    [Header("Change Post Processing Volume Weights")]
+    [SerializeField] List<PostProcessVolume> volumes;
+
     // Start is called before the first frame update
     void Awake()
     {
-        if(MainManager.cultivationLocation == -1)
+        for (int i = 0; i < volumes.Count; i++)
+        {
+            if (i == MainManager.activePostProcessingProfile)
+            {
+                volumes[i].weight = 1;
+                Debug.Log(i + " " + volumes[i].profile.name);
+            }
+            else volumes[i].weight = 0;
+        }
+
+        if (MainManager.cultivationLocation == -1)
         {
             //we are in story mode
             levels[MainManager.progress].SetActive(true);
