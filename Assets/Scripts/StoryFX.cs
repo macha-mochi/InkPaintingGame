@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fungus;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.SceneManagement;
 
 public class StoryFX : MonoBehaviour
 {
@@ -60,5 +61,36 @@ public class StoryFX : MonoBehaviour
         changeTo.weight = 1;
 
         MainManager.activePostProcessingProfile = newV;
+    }
+
+    [Header("Changing Lighting in Dunhuang-esque Caves")]
+    [SerializeField] GameObject vignette; //remember its composed of a parent + child sprite
+    public void ActivateVignette()
+    {
+        vignette.SetActive(true);
+    }
+    public void PlayLightAnimation()
+    {
+        StartCoroutine(Animate());
+    }
+    private IEnumerator Animate()
+    {
+        SpriteRenderer[] sr = vignette.GetComponentsInChildren<SpriteRenderer>();
+        float alpha = 1f;
+        while(alpha > 0)
+        {
+            float newA = Mathf.Max(alpha - 0.002f, 0f);
+            foreach (SpriteRenderer s in sr)
+            {
+                s.color = new Color(1, 1, 1, newA);
+            }
+            alpha = newA;
+            yield return null;
+        }
+    }
+
+    public void LoadCreditsScene()
+    {
+        SceneManager.LoadScene(3);
     }
 }

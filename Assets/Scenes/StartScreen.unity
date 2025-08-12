@@ -591,6 +591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 145d574bb42df468786c3f85864f0d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gallery: {fileID: 1233253136}
   settingsPopup: {fileID: 533089298}
 --- !u!1 &442880291
 GameObject:

@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
             MainManager.numPracticeCurrent = 0;
             MainManager.numLearnCurrent = 0;
         }
-        PlayerPrefs.SetInt("Progress", MainManager.progress);
+        //PlayerPrefs.SetInt("Progress", MainManager.progress);
     }
     public void finishCultivation()
     {

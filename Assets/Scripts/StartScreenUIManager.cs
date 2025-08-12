@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class StartScreenUIManager : MonoBehaviour
 {
+    [SerializeField] Button gallery;
+    private void Start()
+    {
+        gallery.interactable = MainManager.maxProgress >= 10;
+    }
     public void NewGame()
     {
         MainManager.progress = 0;

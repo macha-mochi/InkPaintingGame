@@ -8,6 +8,7 @@ using UnityEngine.Rendering.PostProcessing;
 public class MainManager : MonoBehaviour
 {
     public static int progress = 0;
+    public static int maxProgress = 0;
     public static int numPracticeCurrent = 0;
     public static int numLearnCurrent = 0;
     public static int cultivationLocation = -1;
@@ -22,10 +23,11 @@ public class MainManager : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.SetInt("MaxProgress", Mathf.Max(PlayerPrefs.GetInt("MaxProgress"), progress));
+        maxProgress = Mathf.Max(maxProgress, progress);
+        /*PlayerPrefs.SetInt("MaxProgress", Mathf.Max(PlayerPrefs.GetInt("MaxProgress"), progress));
         PlayerPrefs.SetInt("Progress", progress);
         PlayerPrefs.SetInt("NumPracticeCurrent", numPracticeCurrent);
-        PlayerPrefs.SetInt("NumLearnCurrent", numLearnCurrent);
+        PlayerPrefs.SetInt("NumLearnCurrent", numLearnCurrent);*/
         LoadMainMap();
     }
     private void LoadMainMap()
