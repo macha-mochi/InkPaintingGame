@@ -21,4 +21,8 @@ public class CreditsSceneUIManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    public void LoadGallery()
+    {
+        SceneManager.LoadScene(4);
+    }
 }
