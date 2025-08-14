@@ -89,6 +89,35 @@ public class StoryFX : MonoBehaviour
         }
     }
 
+    [Header("Change Audio After Exorcising Spirit")]
+    [SerializeField] AudioSource source;
+    public void PlaySpiritSound()
+    {
+        source.Play();
+    }
+    public void FadeSpiritSound()
+    {
+        StartCoroutine(FadeSound());
+    }
+    private IEnumerator FadeSound()
+    {
+        float v = source.volume;
+        while(v > 0.02f)
+        {
+            v *= 0.8f;
+            source.volume = v;
+            yield return null;
+        }
+        source.volume = 0f;
+    }
+
+    [Header("Change Audio After Light Rune")]
+    [SerializeField] AudioSource source1;
+    public void PlayLightSound()
+    {
+        source1.Play();
+    }
+
     public void LoadCreditsScene()
     {
         SceneManager.LoadScene(3);

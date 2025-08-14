@@ -65,6 +65,9 @@ public class LearnSpell : MonoBehaviour
     SpellcastingPanel panel;
     Coroutine clearFailTextCoroutine;
 
+    [Header("Audio Stuff")]
+    [SerializeField] AudioSource spellDoneAudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -203,6 +206,7 @@ public class LearnSpell : MonoBehaviour
         {
             callMethodOn.SendMessage(methodName);
         }
+        spellDoneAudioSource.Play();
     }
     public void ResetSpell(string failReason)
     {

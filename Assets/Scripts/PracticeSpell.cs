@@ -58,6 +58,9 @@ public class PracticeSpell : MonoBehaviour
     public string methodName;
     SpellcastingPanel panel;
 
+    [Header("Audio Stuff")]
+    [SerializeField] AudioSource spellDoneAudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -191,6 +194,7 @@ public class PracticeSpell : MonoBehaviour
         {
             callMethodOn.SendMessage(methodName);
         }
+        spellDoneAudioSource.Play();
     }
     private IEnumerator Wait(float delay)
     {

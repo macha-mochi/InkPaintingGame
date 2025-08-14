@@ -14,6 +14,9 @@ public class AudioManager : MonoBehaviour
     private AudioSource[] audioSources;
     WriterAudio fungusAudio;
 
+    public static float musicVolume = 0.25f;
+    public static float sfxVolume = 1f;
+
     void Awake()
     {
         if(instance != null && instance != this)
@@ -26,37 +29,38 @@ public class AudioManager : MonoBehaviour
             instance = this;
         }
         DontDestroyOnLoad(this.gameObject);
+
+        audioSources = new AudioSource[0];
     }
     private void Start()
     {
         musicSource = GetComponent<AudioSource>();
-        UpdateAudioSourceList();
     }
     public void UpdateMusicVolume(float vol)
     {
         musicSource.volume = vol;
-        Debug.Log("music volume: " + vol);
+        musicVolume = vol;
     }
     public void UpdateSFXVolume(float vol)
     {
+        //Debug.Log("num audio sources: " + audioSources.Length);
         foreach(AudioSource a in audioSources)
         {
-            if(a != musicSource)
+            if(a != musicSource && a != null)
             {
                 a.volume = vol;
             }
         }
-        Debug.Log("sfx volume: " + vol);
-        //fungusAudio = FindObjectOfType<WriterAudio>();
         if (fungusAudio != null)
         {
             fungusAudio.SetVolume(vol);
-            Debug.Log("fungus sfx volume: " + vol);
+            //Debug.Log("fungus sfx volume: " + vol);
         }
+        sfxVolume = vol;
     }
-    public void UpdateAudioSourceList() //to be called by main manager after setting up each location
+    public void UpdateAudioSourceList() //to be called whenever settings are opened
     {
-        audioSources = FindObjectsOfType<AudioSource>();
+        audioSources = FindObjectsOfType<AudioSource>(true);
         fungusAudio = FindObjectOfType<WriterAudio>();
     }
 
