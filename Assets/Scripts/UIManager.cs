@@ -54,6 +54,7 @@ public class UIManager : MonoBehaviour
     {
         settingsPopup.SetActive(true);
         sayDialog.SetCanAdvanceNextLine(false);
+        AudioManager.Instance.UpdateAudioSourceList();
     }
     public void CloseSettings()
     {

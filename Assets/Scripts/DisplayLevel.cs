@@ -37,7 +37,6 @@ public class DisplayLevel : MonoBehaviour
             if (i == MainManager.activePostProcessingProfile)
             {
                 volumes[i].weight = 1;
-                Debug.Log(i + " " + volumes[i].profile.name);
             }
             else volumes[i].weight = 0;
         }

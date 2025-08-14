@@ -25,6 +25,10 @@ namespace Fungus
         [Tooltip("Volume level of writing sound effects")]
         [Range(0,1)]
         [SerializeField] protected float volume = 1f;
+        public void SetVolume(float f)
+        {
+            volume = f;
+        }
 
         [Tooltip("Loop the audio when in Sound Effect mode. Has no effect in Beeps mode.")]
         [SerializeField] protected bool loop = true;
