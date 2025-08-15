@@ -409,7 +409,6 @@ GameObject:
   - component: {fileID: 89702952}
   - component: {fileID: 89702950}
   - component: {fileID: 89702956}
-  - component: {fileID: 89702957}
   - component: {fileID: 89702958}
   - component: {fileID: 89702959}
   - component: {fileID: 89702960}
@@ -417,13 +416,16 @@ GameObject:
   - component: {fileID: 89702962}
   - component: {fileID: 89702963}
   - component: {fileID: 89702964}
-  - component: {fileID: 89702965}
   - component: {fileID: 89702966}
   - component: {fileID: 89702967}
   - component: {fileID: 89702968}
   - component: {fileID: 89702969}
   - component: {fileID: 89702971}
   - component: {fileID: 89702970}
+  - component: {fileID: 89702972}
+  - component: {fileID: 89702973}
+  - component: {fileID: 89702974}
+  - component: {fileID: 89702975}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -458,7 +460,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 89702951}
   selectedCommands:
-  - {fileID: 89702970}
+  - {fileID: 89702967}
   variables: []
   description: 
   stepPause: 0
@@ -527,18 +529,20 @@ MonoBehaviour:
   - {fileID: 89702971}
   - {fileID: 89702970}
   - {fileID: 89702956}
-  - {fileID: 89702957}
   - {fileID: 89702958}
   - {fileID: 89702959}
+  - {fileID: 89702972}
   - {fileID: 89702960}
+  - {fileID: 89702973}
   - {fileID: 89702961}
   - {fileID: 89702962}
+  - {fileID: 89702974}
   - {fileID: 89702963}
   - {fileID: 89702964}
-  - {fileID: 89702965}
   - {fileID: 89702966}
-  - {fileID: 89702967}
   - {fileID: 89702968}
+  - {fileID: 89702975}
+  - {fileID: 89702967}
   - {fileID: 89702969}
   suppressAllAutoSelections: 0
 --- !u!114 &89702952
@@ -586,37 +590,8 @@ MonoBehaviour:
   itemId: 3
   indentLevel: 0
   storyText: "{i}The leaves are already beginning to fall. If the tea shop owner
-    hadn\u2019t told me to come here... {/i}"
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
---- !u!114 &89702957
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 89702948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 4
-  indentLevel: 0
-  storyText: '{i}...I might just be holed up in my room or the library studying right
-    now, never knowing this was here all along.{/i}
-
-'
+    hadn\u2019t told me to come here, I might just be holed up in my room or the
+    library studying right now, never knowing this was here all along.{/i}"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -672,7 +647,7 @@ MonoBehaviour:
   itemId: 6
   indentLevel: 0
   storyText: "{i}But those people didn\u2019t care what titles I had, I could help
-    them just the same. {/i}"
+    them just the same. It only mattered to me.{/i}"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -699,7 +674,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 7
   indentLevel: 0
-  storyText: "{i}It\u2026 only mattered to me.{/i}"
+  storyText: '{i}Sure, the hopes of my family were part of it, but deep down I wanted
+    to be the best more. I wanted my name said with admiration by other cultivators,
+    to see it amongst the ranks of the best of my time.{/i}'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -726,8 +703,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 8
   indentLevel: 0
-  storyText: "{i}And who\u2019s to say there will be less to do, time to rest, once
-    I\u2019ve become a master? This could be my last time ever seeing this shade
+  storyText: "{i}And who\u2019s to say there will be less to do, more time to rest,
+    once I\u2019ve become a master? This could be my last time ever seeing this shade
     of red.{/i}"
   description: 
   character: {fileID: 0}
@@ -810,35 +787,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 11
   indentLevel: 0
-  storyText: "{i}But now I want to see what else I can do with cultivation. Like
-    those healing runes - maybe they\u2019ll come in handy for the future. {/i}"
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
---- !u!114 &89702965
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 89702948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 12
-  indentLevel: 0
-  storyText: '{i}I want to practice, meditate, and just exist in places like this.{/i}'
+  storyText: '{i}But now I want to learn more to do more. What else can I accomplish
+    with cultivation? It can be a way to help others, but also help me to live a
+    more fulfilling existence.{/i}'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -866,7 +817,8 @@ MonoBehaviour:
   itemId: 13
   indentLevel: 0
   storyText: "{i}A commoner\u2019s lifespan is several decades, and the Heavens reward
-    skilled cultivators with hundreds more years of life...{/i}"
+    skilled cultivators with hundreds more years of life. I'll have plenty of time
+    to achieve my goals without sacrificing everything else.{/i}"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -893,8 +845,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 14
   indentLevel: 0
-  storyText: '{i}...I''ll have plenty of time to achieve my goals without sacrificing
-    everything else.{/i}'
+  storyText: '{i}The world must contain many places like this one, places where I
+    could practice or meditate, but also do things outside cultivation, and just
+    exist. What other answers might I find out there?{/i}'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -921,8 +874,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 15
   indentLevel: 0
-  storyText: "{i}I have a duty to my family to restore our status, and a promise
-    to myself to become a master. But I won\u2019t take out my books this time.{/i}"
+  storyText: '{i}I have a duty to my family to restore our status, and a promise
+    to myself to become a master. But I will continue my study of cultivation in
+    a different way...{/i}'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -991,6 +945,119 @@ MonoBehaviour:
   targetObject: {fileID: 1061669080}
   methodName: ChangePostProcessing_PaleToColor
   delay: 0
+--- !u!114 &89702972
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89702948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 19
+  indentLevel: 0
+  storyText: '{i}What even motivated me to study before I came here?{/i}'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &89702973
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89702948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 20
+  indentLevel: 0
+  storyText: '{i}Otherwise, why would I have chased the high from learning every
+    new spell, and then felt frustrated when it started coming less easily?{/i}'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &89702974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89702948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 21
+  indentLevel: 0
+  storyText: '{i}If Master were here, he''d tell me that it''s human to wish for
+    fame and prestige. But I''ve done more than wish, haven''t I? I''ve denied myself
+    happiness in the present in the name of reserving time for studying, so I could
+    be happier in the future.{/i}'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &89702975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89702948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 22
+  indentLevel: 0
+  storyText: '{i}...Now that I finally understand the nature of "time", that word
+    I was always saying because I felt I didn''t have enough of it.{/i}'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!1 &115728146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1134,7 +1201,6 @@ GameObject:
   - component: {fileID: 173985315}
   - component: {fileID: 173985314}
   - component: {fileID: 173985318}
-  - component: {fileID: 173985317}
   - component: {fileID: 173985319}
   - component: {fileID: 173985320}
   - component: {fileID: 173985321}
@@ -1161,6 +1227,8 @@ GameObject:
   - component: {fileID: 173985342}
   - component: {fileID: 173985343}
   - component: {fileID: 173985344}
+  - component: {fileID: 173985345}
+  - component: {fileID: 173985346}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1181,7 +1249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 0, y: 0}
+  scrollPos: {x: -81.765015, y: -57.607162}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -1193,9 +1261,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 173985319}
+  - {fileID: 173985320}
   selectedCommands:
-  - {fileID: 173985343}
+  - {fileID: 173985339}
   variables: []
   description: 
   stepPause: 0
@@ -1221,8 +1289,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 1
   indentLevel: 0
-  storyText: "{i}This is the place marked on the map submitted by the commissioner.
-    I guess that house must be where they live. I\u2019ll go knock on their door.{/i}"
+  storyText: '{i}This is the place marked on the map submitted by the commissioner.
+    That house must be where he lives.{/i}'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1271,7 +1339,7 @@ MonoBehaviour:
   - {fileID: 173985315}
   - {fileID: 173985314}
   - {fileID: 173985318}
-  - {fileID: 173985317}
+  - {fileID: 173985345}
   - {fileID: 173985322}
   suppressAllAutoSelections: 0
 --- !u!114 &173985306
@@ -1318,7 +1386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2
   indentLevel: 0
-  storyText: Hello? Is this the residence of Mr. Li?
+  storyText: '*knock* *knock* Hello? Is this the residence of Mr. Li?'
   description: 
   character: {fileID: 1014318189}
   portrait: {fileID: 0}
@@ -1345,7 +1413,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 3
   indentLevel: 0
-  storyText: "{i}Oh, this is awkward. Why aren\u2019t they answering??{/i}"
+  storyText: '{i}Oh, this is awkward. Why isn''t he answering? Maybe I should knock
+    again--{/i}'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1372,7 +1441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 4
   indentLevel: 0
-  storyText: Who is it?!
+  storyText: Who's there?!
   description: 
   character: {fileID: 199550375}
   portrait: {fileID: 0}
@@ -1550,33 +1619,6 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!114 &173985317
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173985302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 12
-  indentLevel: 0
-  storyText: '{i}The old man closes the door, and I go down to the bridge.{/i}'
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
 --- !u!114 &173985318
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1591,7 +1633,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 11
   indentLevel: 0
-  storyText: Alright, I will go investigate that area. Please stay inside, sir.
+  storyText: All right, I will go investigate that area. Please stay inside, sir.
   description: 
   character: {fileID: 1014318189}
   portrait: {fileID: 0}
@@ -1661,6 +1703,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 173985342}
   - {fileID: 173985344}
+  - {fileID: 173985346}
   - {fileID: 173985326}
   - {fileID: 173985325}
   - {fileID: 173985327}
@@ -1740,9 +1783,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 16
   indentLevel: 0
-  storyText: '{i}A drowned spirit! Perhaps even the reason there had to be a bridge
-    here. I need to exorcize this place and send this soul back into the reincarnation
-    cycle.{/i}'
+  storyText: '{i}A drowned spirit! Perhaps even the reason a bridge had to built
+    here? No, don''t get distracted. I need to exorcize this place and send this
+    soul back into the reincarnation cycle.{/i}'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1827,8 +1870,8 @@ MonoBehaviour:
   itemId: 20
   indentLevel: 0
   storyText: A drowned spirit! Why, I could have ended up as one of those back in
-    the day. I've been a sailor since I was younger than you, and I was on the water
-    more often than on land!
+    the day. I've been a sailor since I was younger than you... on the water more
+    often than I was on land...
   description: 
   character: {fileID: 199550375}
   portrait: {fileID: 0}
@@ -1911,8 +1954,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 21
   indentLevel: 0
-  storyText: "{i}I really need to get my signature and get going - but it\u2019s
-    rude to interrupt an elder. I guess I\u2019ll just\u2026 stand here and wait
+  storyText: "{i}I really need to get my signature and get going... but it\u2019s
+    rude to interrupt an elder... I guess I\u2019ll just\u2026 stand here and wait
     for him to finish\u2026{/i}"
   description: 
   character: {fileID: 0}
@@ -1996,7 +2039,7 @@ MonoBehaviour:
   itemId: 25
   indentLevel: 0
   storyText: "I always wanted to be a poet, so I thought I\u2019d be one in retirement.
-    But these hands are too stiff and shaky to hold a brush now..."
+    But these hands are too stiff and shaky to hold a brush now."
   description: 
   character: {fileID: 199550375}
   portrait: {fileID: 0}
@@ -2108,8 +2151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 30
   indentLevel: 0
-  storyText: '{i}He signs the commission and closes the door. That''s my first one
-    done!{/i}
+  storyText: '{i}He signs off on the commission and closes the door. That''s my first
+    one done!{/i}
 
 '
   description: 
@@ -2140,7 +2183,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "{i}The full moon is soon, and what the old gentleman said does sound
     pretty nice. But can I afford to take the time off from studying? That\u2019s
-    gonna be a whole evening lost\u2026{/i}"
+    going to be an evening lost\u2026{/i}"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -2252,7 +2295,7 @@ MonoBehaviour:
   targetColorOLD: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &173985343
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2269,7 +2312,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &173985344
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2284,6 +2327,60 @@ MonoBehaviour:
   targetObject: {fileID: 1385547947}
   methodName: FadeSpiritSound
   delay: 0
+--- !u!114 &173985345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173985302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 39
+  indentLevel: 0
+  storyText: '{i}This sounds like spirit activity. Time to confirm.{/i}'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &173985346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173985302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 40
+  indentLevel: 0
+  storyText: May you find peace.
+  description: 
+  character: {fileID: 1014318189}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!1 &175167950
 GameObject:
   m_ObjectHideFlags: 0
@@ -2447,6 +2544,8 @@ GameObject:
   - component: {fileID: 255455498}
   - component: {fileID: 255455499}
   - component: {fileID: 255455500}
+  - component: {fileID: 255455501}
+  - component: {fileID: 255455502}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2479,9 +2578,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 255455481}
+  - {fileID: 255455486}
   selectedCommands:
-  - {fileID: 255455500}
+  - {fileID: 255455490}
   variables: []
   description: 
   stepPause: 0
@@ -2597,7 +2696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2
   indentLevel: 0
-  storyText: "{i}There! A temple built into a rock face - just as described on that
+  storyText: "{i}There! A temple built into a rock face--just as described on that
     scroll. Just a little further\u2026{/i}"
   description: 
   character: {fileID: 0}
@@ -2670,7 +2769,7 @@ MonoBehaviour:
   itemId: 6
   indentLevel: 0
   storyText: "{i}There\u2019s definitely something on the walls, but I can\u2019t
-    make it out.{/i}"
+    make it out that well.{/i}"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -2794,8 +2893,10 @@ MonoBehaviour:
   - {fileID: 255455495}
   - {fileID: 255455496}
   - {fileID: 255455487}
+  - {fileID: 255455501}
   - {fileID: 255455488}
   - {fileID: 255455489}
+  - {fileID: 255455502}
   - {fileID: 255455491}
   - {fileID: 255455490}
   - {fileID: 255455493}
@@ -2814,9 +2915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 12
   indentLevel: 0
-  storyText: "{i}Oh, the sun is setting\u2026 Hang on, those mountains are the same
-    as the ones depicted in the cave. They were at my back when I entered\u2026 so
-    I didn\u2019t notice.{/i}"
+  storyText: '{i}I''m glad I came here.{/i}'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -2871,9 +2970,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 14
   indentLevel: 0
-  storyText: "{i}Wait, is that Master\u2019s house up there? And those stairs winding
-    up\u2026 and the pavilion where I once righted a young turtle, flipped on its
-    back unable to get up\u2026{/i}"
+  storyText: "{i}Wait, is that Master\u2019s house up there? I've never seen it from
+    this angle before. And those stairs winding up... and the pavilion where I once
+    righted a young turtle, flipped on its back unable to get up...{/i}"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -3095,7 +3194,7 @@ MonoBehaviour:
   durationOLD: 0
 --- !u!114 &255455500
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -3110,6 +3209,63 @@ MonoBehaviour:
   targetObject: {fileID: 748408298}
   methodName: PlayLightSound
   delay: 0
+--- !u!114 &255455501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255455470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 27
+  indentLevel: 0
+  storyText: "{i}Oh, the sun is setting. Hang on, those mountains are the same as
+    the ones depicted on the cavern walls. They were at my back when I entered, so
+    I didn\u2019t notice.{/i}"
+  description: 
+  character: {fileID: 1014318189}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &255455502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255455470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 28
+  indentLevel: 0
+  storyText: '{i}I remember I wanted it to cultivate with me, to become a divine
+    turtle, but Master talked me out of it.{/i}'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!1 &257550085
 GameObject:
   m_ObjectHideFlags: 0
@@ -3244,7 +3400,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 262139060}
   selectedCommands:
-  - {fileID: 262139073}
+  - {fileID: 262139068}
   variables: []
   description: 
   stepPause: 0
@@ -3602,7 +3758,7 @@ MonoBehaviour:
   targetGameObjectOLD: {fileID: 0}
 --- !u!114 &262139073
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -3623,7 +3779,7 @@ MonoBehaviour:
   targetGameObjectOLD: {fileID: 0}
 --- !u!114 &262139074
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -5870,7 +6026,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 770245835}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 770245834}
   variables: []
   description: 
   stepPause: 0
@@ -5955,7 +6112,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "{i}So this is my room for the next\u2026 however long I\u2019m out
     here. The cultivator guild has many guesthouses for visitors, and they're quite
-    nice! I\u2019m a registered member now too.{/i}\n"
+    nice! I\u2019m a registered guild member now too.{/i}\n"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -6012,7 +6169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 6
   indentLevel: 0
-  storyText: "{i}Not bad. Tomorrow, I\u2019ll go check out the library.{/i}"
+  storyText: '{i}Not bad. First stop tomorrow: the library.{/i}'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -6040,7 +6197,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 232
-    y: 131.5
+    y: 130.5
     width: 111
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -7254,7 +7411,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 932096131}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 932096139}
   variables: []
   description: 
   stepPause: 0
@@ -7403,7 +7561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2
   indentLevel: 0
-  storyText: '{i}As promised - an evening on the harbor.{/i}'
+  storyText: '{i}As promised: an evening on the harbor.{/i}'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -7430,9 +7588,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 10
   indentLevel: 0
-  storyText: "{i}I should do more of these commissions. It\u2019s nice to be able
-    to help out the common people. Plus, I\u2019ll get to learn more of the locals\u2019
-    wisdom.{/i}"
+  storyText: '{i}I should do more of these commissions. As always, Master was right.
+    It feels good, being able to help the common people. What other local wisdom
+    might I gain?{/i}'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -7459,8 +7617,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 9
   indentLevel: 0
-  storyText: "{i}There\u2019s no one around, and the waters are so calm. This would
-    be a great place to read cultivation texts and learn runes.{/i}"
+  storyText: '{i}No one around, the water so calm... This would be a great place
+    to read cultivation texts and learn runes.{/i}'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -7514,7 +7672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 7
   indentLevel: 0
-  storyText: "{i}It\u2019s nice to be here by myself.{/i}"
+  storyText: '{i}Wow, he was right. It''s nice to be here by myself.{/i}'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -7541,8 +7699,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 11
   indentLevel: 0
-  storyText: "{i}Technically, I\u2019ve been out on the water before - I had to cross
-    it to get to the city from the mountains where I live with Master.{/i}"
+  storyText: "{i}Technically, I\u2019ve been out on the water before. I had to cross
+    it on the ferry from Master's mountains to the city.{/i}"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -7791,6 +7949,7 @@ GameObject:
   - component: {fileID: 958691518}
   - component: {fileID: 958691520}
   - component: {fileID: 958691521}
+  - component: {fileID: 958691522}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -7823,8 +7982,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 958691486}
-  selectedCommands: []
+  - {fileID: 958691500}
+  selectedCommands:
+  - {fileID: 958691520}
   variables: []
   description: 
   stepPause: 0
@@ -7850,9 +8010,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2
   indentLevel: 0
-  storyText: "{i}It was from the tea shop owner, who requested for me to meet him
-    here. His grandson has been sick for the last three days, and traditional treatments
-    have had no effect\u2026{/i}"
+  storyText: "{i}The tea shop owner requested for me to meet him here. His grandson
+    has been sick for the past three days, and traditional treatments have had no
+    effect\u2026{/i}"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -8088,8 +8248,7 @@ MonoBehaviour:
   itemId: 7
   indentLevel: 0
   storyText: '{i}The tea shop owner disappears into the house. Some time later, he
-    emerges with a boy who looks around 10 years old, and guides the boy to a bench
-    in the garden.{/i}'
+    emerges with a boy who looks around 10, and guides him to a bench in the garden.{/i}'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -8116,7 +8275,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 8
   indentLevel: 0
-  storyText: "{i}Oh no, a child\u2026 How do you talk to a child?!{/i}"
+  storyText: '{i}I never know what to say to young children. Let''s just be professionally
+    detached. {/i}'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -8143,7 +8303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 9
   indentLevel: 0
-  storyText: ...How are you feeling, Ming?
+  storyText: Can you describe how you're feeling, Ming?
   description: 
   character: {fileID: 1014318189}
   portrait: {fileID: 0}
@@ -8262,6 +8422,7 @@ MonoBehaviour:
   - {fileID: 958691517}
   - {fileID: 958691519}
   - {fileID: 958691518}
+  - {fileID: 958691522}
   - {fileID: 958691520}
   - {fileID: 958691521}
   suppressAllAutoSelections: 0
@@ -8455,7 +8616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 20
   indentLevel: 0
-  storyText: "{i}Wait, that was much easier than last time I tried casting this spell\u2026
+  storyText: "{i}Wait, that was much easier than last time I tried casting this spell.
     I\u2019m getting better! Although given his age and size, I may have given him
     too much.{/i}"
   description: 
@@ -8484,7 +8645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 21
   indentLevel: 0
-  storyText: "There\u2026 How do you feel now?"
+  storyText: There. How do you feel now?
   description: 
   character: {fileID: 1014318189}
   portrait: {fileID: 0}
@@ -8511,8 +8672,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 28
   indentLevel: 0
-  storyText: "{i}I didn\u2019t do that much anyway\u2026 and that\u2019s *definitely*
-    awkward silence.{/i}"
+  storyText: "{i}I didn\u2019t do that much anyway. Quick, think of something to
+    say next...{/i}"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -8649,7 +8810,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 23
   indentLevel: 0
-  storyText: "{i}Ok yeah, too much\u2026 How do you deal with overly energetic children?!{/i}"
+  storyText: "{i}Okay yeah, too much\u2026  The tea shop owner will just have to
+    deal with an overly energetic grandson for a while.{/i}"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -8730,7 +8892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 31
   indentLevel: 0
-  storyText: "But if you\u2019ve got free time - you should go visit the maple forest
+  storyText: "But if you\u2019ve got free time, you should go visit the maple forest
     near the mountains first. Maple season is almost over, so you better hurry. They\u2019re
     really a must-see for anyone visiting the city around this time."
   description: 
@@ -8788,7 +8950,7 @@ MonoBehaviour:
   itemId: 32
   indentLevel: 0
   storyText: "Thank you so much for the recommendation! Please sign here\u2026 thanks.
-    And before I go - do you have any loose leaf tea for sale?"
+    And before I go--do you have any loose leaf tea for sale?"
   description: 
   character: {fileID: 1014318189}
   portrait: {fileID: 0}
@@ -8822,6 +8984,36 @@ MonoBehaviour:
     booleanRef: {fileID: 0}
     booleanVal: 1
   targetGameObjectOLD: {fileID: 0}
+--- !u!114 &958691522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958691483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 34
+  indentLevel: 0
+  storyText: Here, I'll give you a map marked with my favorite place to see the maples.
+    I went with Ming and my family last year. Best part is, most people don't know
+    about it because it's off the main path. There won't be mountains and seas of
+    maple-viewers.
+  description: 
+  character: {fileID: 1012578434}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!1 &959210895
 GameObject:
   m_ObjectHideFlags: 1
@@ -8851,7 +9043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 255455471}
+  selectedFlowchart: {fileID: 1044369519}
 --- !u!4 &959210897
 Transform:
   m_ObjectHideFlags: 1
@@ -9270,11 +9462,12 @@ GameObject:
   - component: {fileID: 1044369521}
   - component: {fileID: 1044369520}
   - component: {fileID: 1044369525}
-  - component: {fileID: 1044369524}
   - component: {fileID: 1044369523}
   - component: {fileID: 1044369527}
   - component: {fileID: 1044369528}
   - component: {fileID: 1044369529}
+  - component: {fileID: 1044369530}
+  - component: {fileID: 1044369531}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -9309,7 +9502,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1044369521}
   selectedCommands:
-  - {fileID: 1044369529}
+  - {fileID: 1044369531}
   variables: []
   description: 
   stepPause: 0
@@ -9362,8 +9555,9 @@ MonoBehaviour:
   eventHandler: {fileID: 1044369520}
   commandList:
   - {fileID: 1044369525}
-  - {fileID: 1044369524}
+  - {fileID: 1044369530}
   - {fileID: 1044369523}
+  - {fileID: 1044369531}
   - {fileID: 1044369527}
   - {fileID: 1044369528}
   - {fileID: 1044369529}
@@ -9397,37 +9591,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 3
   indentLevel: 0
-  storyText: "I think\u2026 I do."
+  storyText: I think so.
   description: 
   character: {fileID: 1014318189}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
---- !u!114 &1044369524
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1044369518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 2
-  indentLevel: 0
-  storyText: Do you understand now why it was so imperative for you to leave for
-    a while?
-  description: 
-  character: {fileID: 1733691801}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -9452,8 +9618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 1
   indentLevel: 0
-  storyText: "Master, I\u2019ve returned. Here\u2019s some tea I brought back from
-    the city - a local specialty."
+  storyText: "Master, I\u2019m back."
   description: 
   character: {fileID: 1014318189}
   portrait: {fileID: 0}
@@ -9505,7 +9670,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &1044369529
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -9523,6 +9688,62 @@ MonoBehaviour:
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
   fadeTexture: {fileID: 0}
   fadeTweenType: 4
+--- !u!114 &1044369530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044369518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 8
+  indentLevel: 0
+  storyText: '*smiling* Welcome home. Do you understand now why it was so imperative
+    for you to leave for a while?'
+  description: 
+  character: {fileID: 1733691801}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &1044369531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044369518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 9
+  indentLevel: 0
+  storyText: "Here\u2019s some tea I brought back from the city--a local specialty.
+    Let's steep some while I tell you everything new I've learned..."
+  description: 
+  character: {fileID: 1014318189}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!1001 &1046151431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9992,7 +10213,6 @@ GameObject:
   - component: {fileID: 1157470825}
   - component: {fileID: 1157470829}
   - component: {fileID: 1157470828}
-  - component: {fileID: 1157470826}
   - component: {fileID: 1157470827}
   - component: {fileID: 1157470844}
   - component: {fileID: 1157470843}
@@ -10011,6 +10231,8 @@ GameObject:
   - component: {fileID: 1157470830}
   - component: {fileID: 1157470845}
   - component: {fileID: 1157470846}
+  - component: {fileID: 1157470847}
+  - component: {fileID: 1157470848}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -10045,7 +10267,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1157470819}
   selectedCommands:
-  - {fileID: 1157470824}
+  - {fileID: 1157470845}
   variables: []
   description: 
   stepPause: 0
@@ -10114,9 +10336,9 @@ MonoBehaviour:
   - {fileID: 1157470824}
   - {fileID: 1157470823}
   - {fileID: 1157470825}
+  - {fileID: 1157470847}
   - {fileID: 1157470829}
   - {fileID: 1157470828}
-  - {fileID: 1157470826}
   - {fileID: 1157470827}
   - {fileID: 1157470844}
   - {fileID: 1157470843}
@@ -10130,6 +10352,7 @@ MonoBehaviour:
   - {fileID: 1157470835}
   - {fileID: 1157470834}
   - {fileID: 1157470833}
+  - {fileID: 1157470848}
   - {fileID: 1157470832}
   - {fileID: 1157470831}
   - {fileID: 1157470830}
@@ -10181,7 +10404,7 @@ MonoBehaviour:
   itemId: 2
   indentLevel: 0
   storyText: "{i}Oh no, I\u2019ve overslept! I knew I shouldn\u2019t have stayed
-    up reading that martial arts novel\u2026!{/i}"
+    up reading that martial arts novel\u2026 I've got to get downstairs fast. {/i}"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -10252,35 +10475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 5
   indentLevel: 0
-  storyText: "Good morning. There\u2019s a matter I\u2019d like to discuss with you,
-    but you\u2026 don\u2019t seem quite fully awake\u2026"
-  description: 
-  character: {fileID: 1733691801}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
---- !u!114 &1157470826
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157470816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 8
-  indentLevel: 0
-  storyText: Have some tea while I explain.
+  storyText: Good morning. Sleep well?
   description: 
   character: {fileID: 1733691801}
   portrait: {fileID: 0}
@@ -10335,8 +10530,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 7
   indentLevel: 0
-  storyText: "My apologies for interrupting. Staying up late compromises both tonight\u2019s
-    rest and tomorrow\u2019s focus, but--we are getting off topic. "
+  storyText: That's good. Now onto what I wanted to tell you... have some tea while
+    I explain.
   description: 
   character: {fileID: 1733691801}
   portrait: {fileID: 0}
@@ -10363,10 +10558,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 6
   indentLevel: 0
-  storyText: "It\u2019s 100% my fault for staying up late last night! I know you
-    hate when I don\u2019t sleep enough and-"
+  storyText: '{i} The sleeping itself was the same as any other night. I just wish
+    the time frame was shifted back. I''m most productive in the morning, and now
+    half of it''s gone. {/i}'
   description: 
-  character: {fileID: 1014318189}
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -10420,7 +10616,7 @@ MonoBehaviour:
   itemId: 23
   indentLevel: 0
   storyText: '{i}Master delivered the news gently, but how could my progress be anything
-    but disappointing?{/i}'
+    but disappointing? If not to him, then to me.{/i}'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -10447,9 +10643,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 22
   indentLevel: 0
-  storyText: "But please take it easy while you\u2019re out there. Even the young
-    will tire. Take some time to experience life outside cultivating\u2013when you
-    return, you\u2019ll be more ready to learn than ever."
+  storyText: "Also, please take it easy while you\u2019re out there. Even the young
+    will tire. Take some time to experience life outside cultivating. When you return,
+    you\u2019ll be more ready to learn than ever."
   description: 
   character: {fileID: 1733691801}
   portrait: {fileID: 0}
@@ -10476,8 +10672,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 21
   indentLevel: 0
-  storyText: 'However long you wish to be. Each person has their own journey; return
-    when you feel ready. '
+  storyText: However long you wish to be. Each person has their own journey; return
+    when you feel ready. I only ask that you take this seriously as an educational
+    experience.
   description: 
   character: {fileID: 1733691801}
   portrait: {fileID: 0}
@@ -10533,7 +10730,8 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "It will help your confidence. Besides, you can\u2019t stay here as
     a student forever. Some day, you will have to forge your own way in the world,
-    and this trip can show you a bit of what that\u2019s like."
+    and this trip can show you a bit of what that\u2019s like. Something I wish my
+    own master had included in my studies."
   description: 
   character: {fileID: 1733691801}
   portrait: {fileID: 0}
@@ -10562,7 +10760,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Hence why it will be good for you to go out into the world, where cultivators
     like us are needed, and observe how helpful the skills you\u2019ve already learned
-    can be."
+    can be. "
   description: 
   character: {fileID: 1733691801}
   portrait: {fileID: 0}
@@ -10589,9 +10787,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 17
   indentLevel: 0
-  storyText: "I understand. We\u2019ve been getting a lot of news about young prodigies,
-    and please know the skills you\u2019re learning are objectively advanced. It\u2019s
-    natural that you feel frustrated. "
+  storyText: "Thank you for telling me. We\u2019ve been getting a lot of news about
+    young prodigies lately, and please know the skills you\u2019re learning are objectively
+    advanced. Frustration is natural."
   description: 
   character: {fileID: 1733691801}
   portrait: {fileID: 0}
@@ -10618,9 +10816,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 16
   indentLevel: 0
-  storyText: "{i}...And the legendary Ninth Heaven is accessible only to gods and
-    monsters. I\u2019m getting ahead of myself though, since I\u2019m barely at Third.
-    {/i}\n"
+  storyText: "{i}And the legendary Ninth Heaven is accessible only to gods and monsters.
+    I\u2019m getting ahead of myself though, since I\u2019m barely at Third. {/i}\n"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -10648,7 +10845,7 @@ MonoBehaviour:
   itemId: 15
   indentLevel: 0
   storyText: '{i}Even Master only broke through to the Sixth Heaven a few years before
-    I became his student, joining a handful of others throughout the world...{/i}'
+    I became his student, joining a prominent handful of others throughout the world.{/i}'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -10703,8 +10900,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 13
   indentLevel: 0
-  storyText: "{i}My goal is the Fifth Heaven, which is when you\u2019re officially
-    recognized as a master cultivator. It feels so far away these days\u2026{/i}"
+  storyText: "{i}My goal is the Fifth Heaven, which is when your power level is high
+    enough to be officially recognized as a master cultivator. It feels so far away
+    these days\u2026{/i}"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -10731,8 +10929,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 12
   indentLevel: 0
-  storyText: "I just.. I feel like I\u2019ve hit a plateau, especially with the new
-    runes. I\u2019ve been stuck at the Third Heaven for so long\u2026"
+  storyText: "I just feel like I\u2019ve hit a plateau recently, especially with
+    the new runes. Other cultivators don't seem to need so much time to pass the
+    Third Heaven. "
   description: 
   character: {fileID: 1014318189}
   portrait: {fileID: 0}
@@ -10787,8 +10986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 10
   indentLevel: 0
-  storyText: Wait, why? Did I do something wrong? Am I not doing well enough in your
-    lessons?
+  storyText: Wait, why? Did I do something? Am I not doing well enough in your lessons?
   description: 
   character: {fileID: 1014318189}
   portrait: {fileID: 0}
@@ -10849,6 +11047,60 @@ MonoBehaviour:
     booleanRef: {fileID: 0}
     booleanVal: 1
   targetGameObjectOLD: {fileID: 0}
+--- !u!114 &1157470847
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157470816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 27
+  indentLevel: 0
+  storyText: Yes, I did.
+  description: 
+  character: {fileID: 1014318189}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &1157470848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157470816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 28
+  indentLevel: 0
+  storyText: Of course.
+  description: 
+  character: {fileID: 1014318189}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!1001 &1176950178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12585,7 +12837,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1897763366}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 1897763376}
   variables: []
   description: 
   stepPause: 0
@@ -12734,8 +12987,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 5
   indentLevel: 0
-  storyText: '{i}My family used to be very influential in the cultivation world.
-    It''s said some distant ancestor even reached the Seventh Heaven.{/i}'
+  storyText: '{i}We used to be very influential in the cultivation world, dating
+    back to its most ancient texts. It''s said that some distant ancestor even reached
+    the Seventh Heaven once.{/i}'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -12789,9 +13043,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 3
   indentLevel: 0
-  storyText: "{i}Maybe this is part of the test! I think I\u2019ll go to the city.
-    The Cultivation Guild headquarters is there, and so is their library. I bet I
-    could learn a ton of spells there.{/i}"
+  storyText: "{i}Maybe this is part of learning to be more independent? I think I\u2019ll
+    go to the city. The Cultivation Guild headquarters is there, and so is their
+    library. I bet I could learn a ton of spells there.{/i}"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -12924,7 +13178,6 @@ GameObject:
   - component: {fileID: 1907395394}
   - component: {fileID: 1907395393}
   - component: {fileID: 1907395396}
-  - component: {fileID: 1907395397}
   - component: {fileID: 1907395398}
   - component: {fileID: 1907395399}
   m_Layer: 0
@@ -12960,7 +13213,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1907395394}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 1907395398}
   variables: []
   description: 
   stepPause: 0
@@ -13001,7 +13255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 65
+    x: 66
     y: 69
     width: 111
     height: 40
@@ -13013,7 +13267,6 @@ MonoBehaviour:
   eventHandler: {fileID: 1907395393}
   commandList:
   - {fileID: 1907395396}
-  - {fileID: 1907395397}
   - {fileID: 1907395398}
   - {fileID: 1907395399}
   suppressAllAutoSelections: 0
@@ -13046,35 +13299,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 1
   indentLevel: 0
-  storyText: "{i}I\u2019ve been in this city for a while.{/i}"
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
---- !u!114 &1907395397
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1907395391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 2
-  indentLevel: 0
-  storyText: "{i}Feels like I\u2019ve done everything around here. It\u2019s probably
-    time to return soon.{/i}"
+  storyText: "{i}I\u2019ve been in this city for a while. Feels like I\u2019ve done
+    everything around here. It\u2019s probably time to return soon.{/i}"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -13101,7 +13327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 3
   indentLevel: 0
-  storyText: '{i}But before I do - I want to visit those desert caves I read about
+  storyText: '{i}But before I do, I want to visit those desert caves I read about
     in the library the other day. Apparently, they contain art created by an ancient
     civilization.{/i}'
   description: 
