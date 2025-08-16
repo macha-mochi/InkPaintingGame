@@ -43,7 +43,7 @@ public class PracticeSpell : MonoBehaviour
     float timeSinceLastCheck = 0;
     bool drawingStarted = false; //you shouldn't be checking if they fail if they havent even started LMAO
     bool runeCompleted = false;
-    float dAlpha = 0.003f;
+    float dAlpha = 1.5f;
     float delayBeforeTurnGold = 0.8f;
     float timeElapsedSinceComplete = 0;
     bool fadeFromGold = false;
@@ -68,7 +68,7 @@ public class PracticeSpell : MonoBehaviour
         maskImage.overrideSprite = spellAttributes.runeSprite;
         runeMask = runeMaskTex.GetPixels();
 
-        spellDesc.text = spellAttributes.description;
+        spellDesc.text = spellAttributes.description + ": 0%";
 
         panel = GetComponentInParent<SpellcastingPanel>();
         if (panel != null) panel.ResetAlpha();
@@ -92,7 +92,7 @@ public class PracticeSpell : MonoBehaviour
             timeSinceLastCheck += Time.deltaTime;
 
             mousePositionDelta = Input.mousePosition - prevMousePosition;
-            if (mousePositionDelta.magnitude == 0)
+            if (mousePositionDelta.magnitude == 0 && !Input.GetMouseButton(0))
             {
                 timeSinceMouseStopped += Time.deltaTime;
             }
@@ -105,8 +105,8 @@ public class PracticeSpell : MonoBehaviour
             if (timeSinceLastCheck >= 0.5f || timeSinceMouseStopped >= 0.3f)
             {
                 float propFilled = GetPercentFilled();
-                //Debug.Log("proportion filled: " + propFilled);
-                if(propFilled >= 0.9)
+                spellDesc.text = spellAttributes.description + ": " + (int)(propFilled * 100) + "%";
+                if (propFilled >= 0.9)
                 {
                     OnRuneCompleted();
                 }
@@ -120,9 +120,9 @@ public class PracticeSpell : MonoBehaviour
         {
             if (timeElapsedSinceComplete >= delayBeforeTurnGold)
             {
-                float a = paper.color.a - dAlpha;
+                float a = paper.color.a - dAlpha * Time.deltaTime;
                 if (a > 0) paper.color = new Color(1, 1, 1, a);
-                a = gold.color.a + dAlpha;
+                a = gold.color.a + dAlpha * Time.deltaTime;
                 if (a < 1) gold.color = new Color(1, 1, 1, a);
                 if (!fadeFromGold && a >= 1) StartCoroutine(Wait(1f));
             }
@@ -130,10 +130,11 @@ public class PracticeSpell : MonoBehaviour
             {
                 timeElapsedSinceComplete += Time.deltaTime;
             }
+            spellDesc.text = spellAttributes.description + ": " + (int)(GetPercentFilled() * 100) + "%";
         }
         if (fadeFromGold)
         {
-            float a = gold.color.a - dAlpha;
+            float a = gold.color.a - dAlpha * Time.deltaTime;
             if (a <= 0)
             {
                 if (panel != null) panel.isFading = true;
@@ -172,6 +173,7 @@ public class PracticeSpell : MonoBehaviour
         timeSinceLastCheck = 0;
         timeSinceMouseStopped = 0;
         md.ClearDrawableTexture();
+        spellDesc.text = spellAttributes.description + ": 0%";
     }
     private IEnumerator ClearText(float delay)
     {

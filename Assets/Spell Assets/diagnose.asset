@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: diagnose
   m_EditorClassIdentifier: 
   runeSprite: {fileID: 21300000, guid: 2be2595b7d11a415a93952a7a3f0fdfc, type: 3}
-  description: Read Another's Internal Energy
+  description: Read Another's Vital Energy
+  prefab: {fileID: 0}

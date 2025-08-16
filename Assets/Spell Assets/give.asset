@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: give
   m_EditorClassIdentifier: 
   runeSprite: {fileID: 21300000, guid: 2bd2bf78805d84dd49571b52f6a3040e, type: 3}
-  description: Share Internal Energy With Others
+  description: Share Vital Energy With Others
+  prefab: {fileID: 0}

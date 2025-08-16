@@ -460,7 +460,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 89702951}
   selectedCommands:
-  - {fileID: 89702967}
+  - {fileID: 89702975}
   variables: []
   description: 
   stepPause: 0
@@ -487,7 +487,7 @@ MonoBehaviour:
   itemId: 1
   indentLevel: 0
   storyText: "{i}Whew\u2026 even with improved endurance from being in Third Heaven,
-    that was a lot of stairs - but I\u2019m finally away from the crowds.{/i}"
+    that was a lot of stairs--but I\u2019m finally away from the crowds.{/i}"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -986,7 +986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 20
   indentLevel: 0
-  storyText: '{i}Otherwise, why would I have chased the high from learning every
+  storyText: '{i}Otherwise, why would I have chased the high from succeeding at every
     new spell, and then felt frustrated when it started coming less easily?{/i}'
   description: 
   character: {fileID: 0}
@@ -1002,7 +1002,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &89702974
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1032,7 +1032,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &89702975
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1058,50 +1058,6 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!1 &115728146
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 115728148}
-  - component: {fileID: 115728147}
-  m_Layer: 0
-  m_Name: TEST THING
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &115728147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 115728146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c0a884fa22df4a5da49b1e414315eea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &115728148
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 115728146}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 100}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &138516777
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,7 +1219,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 173985320}
   selectedCommands:
-  - {fileID: 173985339}
+  - {fileID: 173985326}
   variables: []
   description: 
   stepPause: 0
@@ -1841,8 +1797,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 18
   indentLevel: 0
-  storyText: '{i}Done. Good thing Master taught me how to cast this spell. Time to
-    get back up to the house and ask the old gentleman to sign off.{/i}'
+  storyText: '{i}Good thing Master taught me that spell. Now to get back up to the
+    house and ask the old gentleman to sign off.{/i}'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1927,7 +1883,8 @@ MonoBehaviour:
   itemId: 22
   indentLevel: 0
   storyText: "The money was great, the people better! But now I\u2019ve got more
-    money than I know what to do with. "
+    money than I know what to do with. Those trade investments paid off better than
+    I could have known."
   description: 
   character: {fileID: 199550375}
   portrait: {fileID: 0}
@@ -2329,7 +2286,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &173985345
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2356,7 +2313,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &173985346
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2578,9 +2535,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 255455486}
-  selectedCommands:
-  - {fileID: 255455490}
+  - {fileID: 255455481}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -2634,7 +2590,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 67
-    y: 70
+    y: 69
     width: 111
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -2797,7 +2753,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 232
-    y: 172.5
+    y: 173.5
     width: 131
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -3211,7 +3167,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &255455501
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -3227,7 +3183,7 @@ MonoBehaviour:
     the ones depicted on the cavern walls. They were at my back when I entered, so
     I didn\u2019t notice.{/i}"
   description: 
-  character: {fileID: 1014318189}
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3240,7 +3196,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &255455502
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -6025,9 +5981,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 770245835}
+  - {fileID: 770245827}
   selectedCommands:
-  - {fileID: 770245834}
+  - {fileID: 770245828}
   variables: []
   description: 
   stepPause: 0
@@ -6111,7 +6067,7 @@ MonoBehaviour:
   itemId: 1
   indentLevel: 0
   storyText: "{i}So this is my room for the next\u2026 however long I\u2019m out
-    here. The cultivator guild has many guesthouses for visitors, and they're quite
+    here. The Cultivators' Guild has many guesthouses for visitors, and they're quite
     nice! I\u2019m a registered guild member now too.{/i}\n"
   description: 
   character: {fileID: 0}
@@ -7588,9 +7544,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 10
   indentLevel: 0
-  storyText: '{i}I should do more of these commissions. As always, Master was right.
-    It feels good, being able to help the common people. What other local wisdom
-    might I gain?{/i}'
+  storyText: '{i}I should do more of these commissions. It''s as Master said: it
+    feels good, being able to help the common people. What other local wisdom might
+    I gain?{/i}'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -7984,7 +7940,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 958691500}
   selectedCommands:
-  - {fileID: 958691520}
+  - {fileID: 958691522}
   variables: []
   description: 
   stepPause: 0
@@ -8247,8 +8203,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 7
   indentLevel: 0
-  storyText: '{i}The tea shop owner disappears into the house. Some time later, he
-    emerges with a boy who looks around 10, and guides him to a bench in the garden.{/i}'
+  storyText: '{i}The tea shop owner disappears into his house. Some time later, he
+    emerges with a boy who looks around ten, and guides him to a bench in the garden.{/i}'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -8399,7 +8355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 590
+    x: 591
     y: 217.5
     width: 175
     height: 40
@@ -8922,7 +8878,7 @@ MonoBehaviour:
   itemId: 30
   indentLevel: 0
   storyText: Oh, you flatter me. My garden is open to the public during operational
-    hours, as people like to drink tea with a view. Feel free to stop by any time.
+    hours, for guests to enjoy their tea with a view. Feel free to stop by any time.
   description: 
   character: {fileID: 1012578434}
   portrait: {fileID: 0}
@@ -8986,7 +8942,7 @@ MonoBehaviour:
   targetGameObjectOLD: {fileID: 0}
 --- !u!114 &958691522
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -9000,8 +8956,8 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Here, I'll give you a map marked with my favorite place to see the maples.
     I went with Ming and my family last year. Best part is, most people don't know
-    about it because it's off the main path. There won't be mountains and seas of
-    maple-viewers.
+    about it because it's off the main path. There won't be crowds of sightseers
+    blocking your view.
   description: 
   character: {fileID: 1012578434}
   portrait: {fileID: 0}
@@ -9043,7 +8999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 1044369519}
+  selectedFlowchart: {fileID: 89702949}
 --- !u!4 &959210897
 Transform:
   m_ObjectHideFlags: 1
@@ -9499,10 +9455,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 1044369521}
-  selectedCommands:
-  - {fileID: 1044369531}
+  selectedBlocks: []
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -9690,7 +9644,7 @@ MonoBehaviour:
   fadeTweenType: 4
 --- !u!114 &1044369530
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -9718,7 +9672,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1044369531
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -10267,7 +10221,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1157470819}
   selectedCommands:
-  - {fileID: 1157470845}
+  - {fileID: 1157470844}
   variables: []
   description: 
   stepPause: 0
@@ -10986,7 +10940,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 10
   indentLevel: 0
-  storyText: Wait, why? Did I do something? Am I not doing well enough in your lessons?
+  storyText: Wait, why? Did I do something wrong? Am I not doing well enough in your
+    lessons?
   description: 
   character: {fileID: 1014318189}
   portrait: {fileID: 0}
@@ -11076,7 +11031,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1157470848
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -12395,7 +12350,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -12838,7 +12793,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1897763366}
   selectedCommands:
-  - {fileID: 1897763376}
+  - {fileID: 1897763371}
   variables: []
   description: 
   stepPause: 0
@@ -12928,8 +12883,8 @@ MonoBehaviour:
   itemId: 7
   indentLevel: 0
   storyText: '{i}My family used their connections to send me to Master to study the
-    family trade.They want me to use cultivation to set up a comfortable life for
-    myself and revive the family reputation.{/i}
+    family trade. They want me to use cultivation to set up a comfortable life for
+    myself and start rebuilding the family''s reputation.{/i}
 
 '
   description: 
@@ -12987,9 +12942,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 5
   indentLevel: 0
-  storyText: '{i}We used to be very influential in the cultivation world, dating
-    back to its most ancient texts. It''s said that some distant ancestor even reached
-    the Seventh Heaven once.{/i}'
+  storyText: '{i}We used to be very influential in the cultivation world, known for
+    producing powerful cultivators and educators who would go on to write some of
+    the most important books on the subject. It''s said that some distant ancestor
+    even reached the Eighth Heaven.{/i}'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -13044,7 +13000,7 @@ MonoBehaviour:
   itemId: 3
   indentLevel: 0
   storyText: "{i}Maybe this is part of learning to be more independent? I think I\u2019ll
-    go to the city. The Cultivation Guild headquarters is there, and so is their
+    go to the city. The Cultivators' Guild headquarters is there, and so is their
     library. I bet I could learn a ton of spells there.{/i}"
   description: 
   character: {fileID: 0}
@@ -13213,8 +13169,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1907395394}
-  selectedCommands:
-  - {fileID: 1907395398}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0

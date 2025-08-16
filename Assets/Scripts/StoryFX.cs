@@ -79,7 +79,7 @@ public class StoryFX : MonoBehaviour
         float alpha = 1f;
         while(alpha > 0)
         {
-            float newA = Mathf.Max(alpha - 0.002f, 0f);
+            float newA = Mathf.Max(alpha - Time.deltaTime, 0f);
             foreach (SpriteRenderer s in sr)
             {
                 s.color = new Color(1, 1, 1, newA);

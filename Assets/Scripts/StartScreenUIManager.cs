@@ -16,10 +16,15 @@ public class StartScreenUIManager : MonoBehaviour
         MainManager.progress = 0;
         MainManager.numLearnCurrent = 0;
         MainManager.numPracticeCurrent = 0;
+        MainManager.cultivationLocation = -1;
+        MainManager.cultivationMode = 's';
+        MainManager.activePostProcessingProfile = 0;
         SceneManager.LoadScene(1);
     }
     public void ContinueGame()
     {
+        MainManager.cultivationLocation = -1;
+        MainManager.cultivationMode = 's';
         SceneManager.LoadScene(1);
     }
     public void OpenGallery()

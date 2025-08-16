@@ -7,7 +7,7 @@ public class SpellcastingPanel : MonoBehaviour
 {
     public bool isFading = false;
     float originalAlpha = 0.6f;
-    float dAlpha = 0.06f;
+    float dAlpha = 1f;
     Image img;
 
     private void Start()
@@ -16,13 +16,13 @@ public class SpellcastingPanel : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (isFading)
         {
             Color c = img.color;
             Debug.Log(c.a);
-            img.color = new Color(c.r, c.g, c.b, c.a - dAlpha);
+            img.color = new Color(c.r, c.g, c.b, c.a - dAlpha * Time.deltaTime);
             if (img.color.a <= 0) isFading = false;
         }
     }

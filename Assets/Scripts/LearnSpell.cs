@@ -19,6 +19,8 @@ public class LearnSpell : MonoBehaviour
      * 8. maybe colliders 'blocking off' forbidden areas(ex: intersections with other strokes)
      * to ensure you have to finish this one...if all other strokes are blocked off then
      * you might not even need 'progress' colliders like the racing game
+     * 
+     * 8/15/25: when fail, instead of having to redo entire thing, you just have to start from the last move
      */
 
     [Header("USE THIS! :D")]
@@ -43,7 +45,7 @@ public class LearnSpell : MonoBehaviour
     Texture2D rune;
     int currentStroke = 0;
     bool runeCompleted = false;
-    float dAlpha = 0.003f;
+    float dAlpha = 1.5f; //should be how much it changes in one second
     float delayBeforeTurnGold = 0.8f;
     float timeElapsedSinceComplete = 0;
     bool fadeFromGold = false;
@@ -98,21 +100,21 @@ public class LearnSpell : MonoBehaviour
 
             if (!IsMouseInMask() && Input.GetMouseButton(0))
             {
-                ResetSpell("Mouse was dragged outside lines!");
+                ResetStroke("Mouse was dragged outside lines!");
             }else if (timeSinceLastAction >= timeBeforeFail)
             {
-                ResetSpell("Mouse was stopped for too long!");
+                ResetStroke("Mouse was stopped for too long!");
             }else if(Input.GetMouseButtonDown(0) && !starts[currentStroke].ContainsMouse())
             {
-                ResetSpell("Stroke started in incorrect place!");
+                ResetStroke("Stroke started in incorrect place!");
             }else if (Input.GetMouseButtonUp(0) && !ends[currentStroke].ContainsMouse())
             {
-                ResetSpell("Stroke was released too early!");
+                ResetStroke("Stroke was released too early!");
             }else if(Vector2.Angle(previousVelocityDirection, velocityDirection) > 160 && Input.GetMouseButton(0))
             {
-                ResetSpell("Stroke was drawn in the wrong direction!");
+                ResetStroke("Stroke was drawn in the wrong direction!");
             }
-            if (shouldCountTimeInactive) timeSinceLastAction += Time.deltaTime;
+            if (shouldCountTimeInactive && !Input.GetMouseButton(0)) timeSinceLastAction += Time.deltaTime;
 
             if(timeElapsedSinceMouseSample >= timeBetweenMouseSample)
             {
@@ -127,9 +129,9 @@ public class LearnSpell : MonoBehaviour
         {
             if(timeElapsedSinceComplete >= delayBeforeTurnGold)
             {
-                float a = paper.color.a - dAlpha;
+                float a = paper.color.a - dAlpha * Time.deltaTime;
                 if (a > 0) paper.color = new Color(1, 1, 1, a);
-                a = gold.color.a + dAlpha;
+                a = gold.color.a + dAlpha * Time.deltaTime;
                 if (a < 1) gold.color = new Color(1, 1, 1, a);
                 if (!fadeFromGold && a >= 1) StartCoroutine(Wait(1f));
             }
@@ -140,7 +142,7 @@ public class LearnSpell : MonoBehaviour
         }
         if (fadeFromGold)
         {
-            float a = gold.color.a - dAlpha;
+            float a = gold.color.a - dAlpha * Time.deltaTime;
             if(a <= 0)
             {
                 if(panel != null) panel.isFading = true;
@@ -155,13 +157,22 @@ public class LearnSpell : MonoBehaviour
             
         }
     }
-    public void nextStroke()
+    /**
+     * @return whether the stroke was successful
+     */
+    public bool nextStroke()
     {
         /* PLAN: have two arrays, one for stroke starts and one for stroke ends
          * when you go to the next stroke: if its the last one then finish (call a method that can be overrode)
          * if its not the last one, increment a counter by one and set new ones to be active / restart the countdown
          * (can check if countdown is too long in set drawing started)
          */
+        if (starts[currentStroke].gameObject.activeInHierarchy)
+        {
+            //you reached the end too early since the stroke start is still active
+            ResetStroke("Reached end of stroke too early!");
+            return false;
+        }
         if (barriers[currentStroke] != null) barriers[currentStroke].SetActive(false);
         if (currentStroke == starts.Count-1) //finished
         {
@@ -169,12 +180,14 @@ public class LearnSpell : MonoBehaviour
         }
         else
         {
+            //starts[currentStroke].gameObject.SetActive(false);
             currentStroke++;
             starts[currentStroke].gameObject.SetActive(true);
             ends[currentStroke].gameObject.SetActive(true);
             if (barriers[currentStroke] != null) barriers[currentStroke].SetActive(true);
             shouldCountTimeInactive = true;
         }
+        return true;
     }
     public bool IsMouseInMask()
     {
@@ -190,10 +203,14 @@ public class LearnSpell : MonoBehaviour
         if(drawingStarted == false && b == true) //its the first stroke
         {
             md.SetCanDraw(true);
+            drawingStarted = b;
+            shouldCountTimeInactive = false;
+            timeSinceLastAction = 0;
+        }else if(drawingStarted && b == true)
+        {
+            md.SetCanDraw(true);
         }
-        drawingStarted = b;
-        shouldCountTimeInactive = false;
-        timeSinceLastAction = 0;
+        
     }
     public void OnRuneCompleted()
     {
@@ -207,6 +224,26 @@ public class LearnSpell : MonoBehaviour
             callMethodOn.SendMessage(methodName);
         }
         spellDoneAudioSource.Play();
+    }
+    public void ResetStroke(string failReason)
+    {
+        starts[currentStroke].gameObject.SetActive(true);
+        ends[currentStroke].gameObject.SetActive(true);
+
+        //drawing started still true, should count time inactive still true
+        timeSinceLastAction = 0;
+        md.SetCanDraw(false);
+
+        reasonForFail.text = failReason;
+        if (clearFailTextCoroutine == null)
+        {
+            clearFailTextCoroutine = StartCoroutine(ClearText(1.5f));
+        }
+        else
+        {
+            StopCoroutine(clearFailTextCoroutine);
+            clearFailTextCoroutine = null;
+        }
     }
     public void ResetSpell(string failReason)
     {
@@ -226,7 +263,7 @@ public class LearnSpell : MonoBehaviour
         reasonForFail.text = failReason;
         if (clearFailTextCoroutine == null)
         {
-            clearFailTextCoroutine = StartCoroutine("ClearText", 1.5f);
+            clearFailTextCoroutine = StartCoroutine(ClearText(1.5f));
         }
         else
         {

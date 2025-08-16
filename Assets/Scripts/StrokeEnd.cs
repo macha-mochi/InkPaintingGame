@@ -26,8 +26,8 @@ public class StrokeEnd : MonoBehaviour
         if (ContainsMouse() && s.IsMouseInMask() && Input.GetMouseButtonUp(0))
         {
             //then for the end, if the mouse is released within the thing and its in the texture its also good
-            s.nextStroke();
-            gameObject.SetActive(false);
+            bool successful = s.nextStroke();
+            if(successful) gameObject.SetActive(false);
         }
         Animate();
     }

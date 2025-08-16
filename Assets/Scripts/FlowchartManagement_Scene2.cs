@@ -28,7 +28,6 @@ public class FlowchartManagement_Scene2 : MonoBehaviour
     {
         yield return new WaitForSeconds(4f);
         rune2.SetActive(true);
-        Debug.Log("rune 1 done, set 2nd one active");
     }
     public void OnSecondRuneDone()
     {
@@ -38,6 +37,5 @@ public class FlowchartManagement_Scene2 : MonoBehaviour
     {
         yield return new WaitForSeconds(4f);
         flowchart.ExecuteBlock("afterRunes");
-        Debug.Log("moved on to next part of story.");
     }
 }

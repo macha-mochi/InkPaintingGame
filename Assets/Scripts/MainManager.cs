@@ -89,6 +89,9 @@ public class MainManager : MonoBehaviour
                      */
                     locations[5].isUnlocked = true;
                     locations[5].canProgressStory = true;
+
+                    numPracticeCurrent = 0;
+                    numLearnCurrent = 0;
                 }
                 else
                 {
@@ -126,6 +129,9 @@ public class MainManager : MonoBehaviour
                      */
                     locations[6].isUnlocked = true;
                     locations[6].canProgressStory = true;
+
+                    numPracticeCurrent = 0;
+                    numLearnCurrent = 0;
                 }
                 else
                 {
@@ -173,6 +179,9 @@ public class MainManager : MonoBehaviour
                      */
                     locations[8].isUnlocked = true;
                     locations[8].canProgressStory = true;
+
+                    numPracticeCurrent = 0;
+                    numLearnCurrent = 0;
                 }
                 else
                 {
