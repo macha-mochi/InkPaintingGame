@@ -7,4 +7,5 @@ public class LearnSpellData : ScriptableObject
 {
     public List<int> unlearnedSpells;
     public List<int> learnedSpells;
+    public int lastLearnedSpell; //the index of it
 }

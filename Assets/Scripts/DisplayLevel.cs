@@ -101,10 +101,15 @@ public class DisplayLevel : MonoBehaviour
         int numUnlearned = learnSpellData.unlearnedSpells.Count;
         int index = Random.Range(0, numUnlearned);
         int spellNumber = learnSpellData.unlearnedSpells[index];
+        while(spellNumber == learnSpellData.lastLearnedSpell)
+        {
+            index = Random.Range(0, numUnlearned);
+            spellNumber = learnSpellData.unlearnedSpells[index];
+        }
         GameObject prefabToSpawn = spellDataList[spellNumber].prefab;
         if(prefabToSpawn == null)
         {
-            Debug.Log("NO PREFAB ASSIGNED TO CURRENT LEARN SPELL");
+            //Debug.Log("NO PREFAB ASSIGNED TO CURRENT LEARN SPELL");
             return;
         }
         GameObject newSpell = Instantiate(prefabToSpawn, runeSpawnLocation);
@@ -113,6 +118,7 @@ public class DisplayLevel : MonoBehaviour
         ls.methodName = "ShowCultivationCompleteButton";
         learnSpellData.unlearnedSpells.RemoveAt(index);
         learnSpellData.learnedSpells.Add(spellNumber);
+        learnSpellData.lastLearnedSpell = spellNumber;
     }
     void DisableStoryGameObjects()
     {

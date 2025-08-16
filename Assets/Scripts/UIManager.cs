@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
     public void progressAndUpdateMap()
     {
         MainManager.progress++;
-        if(MainManager.progress == 6 || MainManager.progress == 9)
+        if(MainManager.progress == 6 || MainManager.progress == 7 || MainManager.progress == 9)
         {
             MainManager.numPracticeCurrent = 0;
             MainManager.numLearnCurrent = 0;
@@ -26,11 +26,9 @@ public class UIManager : MonoBehaviour
         if(MainManager.cultivationMode == 'p')
         {
             MainManager.numPracticeCurrent++;
-            Debug.Log(MainManager.numPracticeCurrent);
         }else if(MainManager.cultivationMode == 'l')
         {
             MainManager.numLearnCurrent++;
-            Debug.Log(MainManager.numLearnCurrent);
         }
     }
     public void goPractice(int loc)

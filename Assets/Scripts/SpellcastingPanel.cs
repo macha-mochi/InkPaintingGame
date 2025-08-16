@@ -21,7 +21,6 @@ public class SpellcastingPanel : MonoBehaviour
         if (isFading)
         {
             Color c = img.color;
-            Debug.Log(c.a);
             img.color = new Color(c.r, c.g, c.b, c.a - dAlpha * Time.deltaTime);
             if (img.color.a <= 0) isFading = false;
         }
@@ -31,6 +30,5 @@ public class SpellcastingPanel : MonoBehaviour
         Color c = img.color;
         img.color = new Color(c.r, c.g, c.b, originalAlpha);
         isFading = false;
-        Debug.Log("reset alpha");
     }
 }

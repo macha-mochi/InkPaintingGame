@@ -113,8 +113,8 @@ public class MouseDraw : MonoBehaviour
         float ady = Mathf.Abs(dy);
 
         float theta = Mathf.Atan(ady / adx);
-        float cos = lineWidth / 2 * Mathf.Cos(Mathf.PI / 2 - theta);
-        float sin = lineWidth / 2 * Mathf.Sin(Mathf.PI / 2 - theta);
+        float cos = lineWidth / 2.0f * Mathf.Cos(Mathf.PI / 2 - theta);
+        float sin = lineWidth / 2.0f * Mathf.Sin(Mathf.PI / 2 - theta);
 
         if (x1 <= x2 && y1 <= y2) //q1
         {
@@ -126,6 +126,8 @@ public class MouseDraw : MonoBehaviour
                 while (y >= y1 - sin)
                 {
                     SetPixelsInLine(tex, x, y, x + dx, y + dy, c);
+                    //if its a diagonal jump which we dont want
+                    if (Mathf.Round(dy / dx) == 1) SetPixelsInLine(tex, x, y - 1, x + dx, y - 1 + dy, c);
                     x += dy / dx;
                     y -= 1;
                 }
@@ -135,6 +137,7 @@ public class MouseDraw : MonoBehaviour
                 while (x <= x1 + cos)
                 {
                     SetPixelsInLine(tex, x, y, x + dx, y + dy, c);
+                    if (Mathf.Round(dx/ dy) == 1) SetPixelsInLine(tex, x+1, y, x + 1 + dx, y + dy, c);
                     x += 1;
                     y -= dx / dy;
                 }
@@ -150,6 +153,7 @@ public class MouseDraw : MonoBehaviour
                 while (y >= y1 - sin)
                 {
                     SetPixelsInLine(tex, x, y, x + dx, y + dy, c);
+                    if (Mathf.Round(ady / adx) == 1) SetPixelsInLine(tex, x, y - 1, x + dx, y - 1 + dy, c);
                     x -= ady / adx;
                     y -= 1;
                 }
@@ -159,6 +163,7 @@ public class MouseDraw : MonoBehaviour
                 while (x >= x1 - cos)
                 {
                     SetPixelsInLine(tex, x, y, x + dx, y + dy, c);
+                    if (Mathf.Round(adx / ady) == 1) SetPixelsInLine(tex, x-1, y, x - 1 + dx, y + dy, c);
                     x -= 1;
                     y -= adx / ady;
                 }
@@ -174,6 +179,7 @@ public class MouseDraw : MonoBehaviour
                 while (y <= y1 + sin)
                 {
                     SetPixelsInLine(tex, x, y, x + dx, y + dy, c);
+                    if (Mathf.Round(ady / adx) == 1) SetPixelsInLine(tex, x, y + 1, x + dx, y + 1 + dy, c);
                     x += ady / adx;
                     y += 1;
                 }
@@ -183,6 +189,7 @@ public class MouseDraw : MonoBehaviour
                 while (x <= x1 + cos)
                 {
                     SetPixelsInLine(tex, x, y, x + dx, y + dy, c);
+                    if (Mathf.Round(adx / ady) == 1) SetPixelsInLine(tex, x+1, y, x + 1 + dx, y + dy, c);
                     x += 1;
                     y += adx / ady;
                 }
@@ -198,6 +205,8 @@ public class MouseDraw : MonoBehaviour
                 while (y >= y1 - sin)
                 {
                     SetPixelsInLine(tex, x, y, x + dx, y + dy, c);
+                    if (Mathf.Round(ady / adx) == 1) SetPixelsInLine(tex, x, y - 1, x + dx, y - 1 + dy, c);
+
                     x += ady / adx;
                     y -= 1;
                 }
@@ -207,6 +216,8 @@ public class MouseDraw : MonoBehaviour
                 while (x <= x1 + cos)
                 {
                     SetPixelsInLine(tex, x, y, x + dx, y + dy, c);
+                    if (Mathf.Round(adx / ady) == 1) SetPixelsInLine(tex, x+1, y, x + 1 + dx, y + dy, c);
+
                     x += 1;
                     y -= adx / ady;
                 }
@@ -225,7 +236,9 @@ public class MouseDraw : MonoBehaviour
             float m = Mathf.Abs(dy / dx);
             while((x2 > x1 && x <= x2) || (x2 < x1 && x >= x2))
             {
-                tex.SetPixel((int)x, (int)y, c);
+                //Debug.Log("(" + Mathf.RoundToInt(x) + ", " + Mathf.RoundToInt(y) + ")");
+                //tex.SetPixel((int)x, (int)y, c);
+                tex.SetPixel(Mathf.RoundToInt(x), Mathf.RoundToInt(y), c);
                 if (x1 < x2) x += 1;
                 else x -= 1;
                 if (y1 < y2) y += m;
@@ -237,7 +250,9 @@ public class MouseDraw : MonoBehaviour
             float m = Mathf.Abs(dx / dy);
             while ((y2 > y1 && y <= y2) || (y2 < y1 && y >= y2))
             {
-                tex.SetPixel((int)x, (int)y, c);
+                //Debug.Log("(" + Mathf.RoundToInt(x) + ", " + Mathf.RoundToInt(y) + ")");
+                //tex.SetPixel((int)x, (int)y, c);
+                tex.SetPixel(Mathf.RoundToInt(x), Mathf.RoundToInt(y), c);
                 if (y1 < y2) y += 1;
                 else y -= 1;
                 if (x1 < x2) x += m;

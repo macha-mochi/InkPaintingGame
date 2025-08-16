@@ -7,7 +7,7 @@ public class MouseBarrier : MonoBehaviour, IPointerEnterHandler
     LearnSpell s;
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("entered");
+        //Debug.Log("entered");
         if(Input.GetMouseButton(0)) s.ResetStroke("Mouse deviated from current stroke!"); //only reset if they're also dragging
     }
 

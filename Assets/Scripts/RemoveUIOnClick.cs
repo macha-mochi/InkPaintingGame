@@ -10,22 +10,23 @@ public class RemoveUIOnClick : MonoBehaviour, IPointerClickHandler
     //TODO appraoch doesnt work u will have to fade buttons, scroll, and text separately UGHHHH
     bool faded = false;
     bool inProgress = false;
+    float dAlpha = 2f; //how much it fades in one sec
     [SerializeField] Image[] buttons;
     [SerializeField] Image[] scrollBG;
     [SerializeField] TextMeshProUGUI scrollText;
 
     public void OnPointerClick(PointerEventData p)
     {
-        Debug.Log(faded + " " + inProgress);
+        //Debug.Log(faded + " " + inProgress);
         if (!faded && !inProgress)
         {
-            Debug.Log("fading out");
+            //Debug.Log("fading out");
             StartCoroutine(FadeOut());
             inProgress = true;
         }
         else if (faded && !inProgress)
         {
-            Debug.Log("fading in");
+            //Debug.Log("fading in");
             StartCoroutine(FadeIn());
             inProgress = true;
         }
@@ -39,7 +40,7 @@ public class RemoveUIOnClick : MonoBehaviour, IPointerClickHandler
         float alpha = 0f;
         while (alpha < 1f)
         {
-            alpha += 0.01f;
+            alpha += dAlpha * Time.deltaTime;
             Color c;
             foreach (Image i in buttons)
             {
@@ -56,7 +57,7 @@ public class RemoveUIOnClick : MonoBehaviour, IPointerClickHandler
 
             yield return null;
         }
-        Debug.Log("fade in done");
+        //Debug.Log("fade in done");
         inProgress = false;
         faded = false;
     }
@@ -65,7 +66,7 @@ public class RemoveUIOnClick : MonoBehaviour, IPointerClickHandler
         float alpha = 1f;
         while (alpha > 0f)
         {
-            alpha -= 0.01f;
+            alpha -= dAlpha * Time.deltaTime;
             Color c;
             foreach (Image i in buttons)
             {
@@ -82,7 +83,7 @@ public class RemoveUIOnClick : MonoBehaviour, IPointerClickHandler
 
             yield return null;
         }
-        Debug.Log("fade out done");
+        //Debug.Log("fade out done");
         inProgress = false;
         faded = true;
 

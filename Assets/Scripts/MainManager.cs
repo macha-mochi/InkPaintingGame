@@ -32,37 +32,37 @@ public class MainManager : MonoBehaviour
     }
     private void LoadMainMap()
     {
-        Debug.Log("progress: " + progress);
+        //Debug.Log("progress: " + progress);
         switch (progress)
         {
             case 0:
                 locations[0].isUnlocked = true;
                 locations[0].canProgressStory = true;
-                Debug.Log("player at masters house");
+                //Debug.Log("player at masters house");
                 break;
             case 1:
                 locations[0].isUnlocked = false;
                 locations[1].isUnlocked = true;
                 locations[1].canProgressStory = true;
-                Debug.Log("player going down the mountain");
+                //Debug.Log("player going down the mountain");
                 break;
             case 2:
                 locations[1].isUnlocked = false;
                 locations[2].isUnlocked = true;
                 locations[2].canProgressStory = true;
-                Debug.Log("player arrives at their room in the city");
+                //Debug.Log("player arrives at their room in the city");
                 break;
             case 3:
                 locations[2].isUnlocked = false;
                 locations[3].isUnlocked = true;
                 locations[3].canProgressStory = true;
-                Debug.Log("player at library, introduce to commissions + get info on first one");
+                //Debug.Log("player at library, introduce to commissions + get info on first one");
                 break;
             case 4:
                 locations[3].isUnlocked = false;
                 locations[4].isUnlocked = true;
                 locations[4].canProgressStory = true;
-                Debug.Log("first commission, player at bridge w old guy");
+                //Debug.Log("first commission, player at bridge w old guy");
                 break;
             case 5:
                 locations[4].isUnlocked = false;
@@ -89,9 +89,6 @@ public class MainManager : MonoBehaviour
                      */
                     locations[5].isUnlocked = true;
                     locations[5].canProgressStory = true;
-
-                    numPracticeCurrent = 0;
-                    numLearnCurrent = 0;
                 }
                 else
                 {
@@ -100,7 +97,7 @@ public class MainManager : MonoBehaviour
                     objective.text = text;
                 }
 
-                Debug.Log("[cultivate X times] then player at lake, on boat, unlock lake location");
+                //Debug.Log("[cultivate X times] then player at lake, on boat, unlock lake location");
                 break;
             case 6:
                 locations[5].isUnlocked = false;
@@ -129,9 +126,6 @@ public class MainManager : MonoBehaviour
                      */
                     locations[6].isUnlocked = true;
                     locations[6].canProgressStory = true;
-
-                    numPracticeCurrent = 0;
-                    numLearnCurrent = 0;
                 }
                 else
                 {
@@ -140,13 +134,13 @@ public class MainManager : MonoBehaviour
                         "Learn Spells: " + numLearnCurrent + "/" + learnNeeded;
                 }
 
-                Debug.Log("[cultivate X times] player goes to tea masters garden, does commission and buys tea, unlock location");
+                //Debug.Log("[cultivate X times] player goes to tea masters garden, does commission and buys tea, unlock location");
                 break;
             case 7:
                 locations[6].isUnlocked = false;
                 locations[7].isUnlocked = true;
                 locations[7].canProgressStory = true;
-                Debug.Log("player goes to maple forest, unlock location");
+                //Debug.Log("player goes to maple forest, unlock location");
                 break;
             case 8:
                 locations[7].isUnlocked = false;
@@ -179,9 +173,6 @@ public class MainManager : MonoBehaviour
                      */
                     locations[8].isUnlocked = true;
                     locations[8].canProgressStory = true;
-
-                    numPracticeCurrent = 0;
-                    numLearnCurrent = 0;
                 }
                 else
                 {
@@ -190,19 +181,19 @@ public class MainManager : MonoBehaviour
                         "Learn Spells: " + numLearnCurrent + "/" + learnNeeded;
                 }
 
-                Debug.Log("[cultivate X times] player is at their room, mc realizes theyve been here for while");
+                //Debug.Log("[cultivate X times] player is at their room, mc realizes theyve been here for while");
                 break;
             case 9:
                 locations[8].isUnlocked = false;
                 locations[9].isUnlocked = true;
                 locations[9].canProgressStory = true;
-                Debug.Log("player in desert, pretty AF");
+                //Debug.Log("player in desert, pretty AF");
                 break;
             case 10:
                 locations[9].isUnlocked = false;
                 locations[10].isUnlocked = true;
                 locations[10].canProgressStory = true;
-                Debug.Log("player back at masters house, game ends");
+                //Debug.Log("player back at masters house, game ends");
                 break;
             default:
                 SceneManager.LoadScene(3); //go to credits
